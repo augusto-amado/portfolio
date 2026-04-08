@@ -9,6 +9,15 @@ export const projects = [
     demoUrl: "https://10xdev.com.br"
   },
   {
+    title: "FlowCart",
+    slug: "flowcart",
+    category: "FLOWCART",
+    tags: ["React", "TypeScript", "Recharts"],
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop",
+    description: "Painel de gestão para lojas online com dashboard de analytics (gráficos em tempo real), catálogo de produtos com carrinho, motor de automações com regras configuráveis e hub de integrações.",
+    demoUrl: "https://flowcart-augusto.vercel.app"
+  },
+  {
     title: "Alavanca Dash",
     slug: "alavanca-dash",
     category: "ALAVANCA DASH",

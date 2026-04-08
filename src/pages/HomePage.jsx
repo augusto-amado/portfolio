@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  MapPin, 
-  ExternalLink, 
-  Code2, 
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  ExternalLink,
+  Code2,
   Download,
   BookOpen,
 } from 'lucide-react';
@@ -14,142 +15,17 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
+import TechIcon from "@/components/TechIcon";
+import { experiences } from "@/data/experiences";
+import { projects } from "@/data/projects";
+import { techStackGroups } from "@/data/techStack";
 
-// Simple Icons CDN para maioria; AWS e Git usam Devicons (renderização estável, sem artefatos)
-const DEVICON_CDN = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
-
-const TechIcon = ({ icon, color, alt, className, useDevicon }) => {
-  if (useDevicon) {
-    const deviconPaths = {
-      github: `${DEVICON_CDN}/github/github-original.svg`,
-      git: `${DEVICON_CDN}/git/git-original.svg`,
-      azure: `${DEVICON_CDN}/azure/azure-original.svg`
-    };
-    const deviconPath = deviconPaths[useDevicon] || deviconPaths.github;
-    return <img src={deviconPath} alt={alt} className={className} />;
-  }
-  const hex = color.replace("#", "");
-  return (
-    <img
-      src={`https://cdn.simpleicons.org/${icon}/${hex}?viewbox=auto`}
-      alt={alt}
-      className={className}
-    />
-  );
-};
-
-
-const Portfolio = () => {
+const HomePage = () => {
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('ALL');
 
-  const experiences = [
-    {
-      company: "Startup 10xDev",
-      companyUrl: "https://10xdev.com.br",
-      role: "Cofundador e CTO",
-      period: "jun de 2025 - o momento",
-      duration: "9 meses",
-      location: "Belo Horizonte, Minas Gerais, Brasil · Remota",
-      description: "Lidero a arquitetura e evolução de plataformas full-stack (Next.js, Node.js, Supabase). Desenvolvo APIs REST, biblioteca de componentes reutilizáveis e integração GitSync com GitHub. Responsável por estruturação de projetos, dashboards e automações. Traduzo requisitos de negócio em solução técnica e mantenho documentação e versionamento de código."
-    },
-    {
-      company: "CONTI CONSULTORIA, Belo Horizonte",
-      companyUrl: "https://conticonsultoria.com.br",
-      role: "Assistente de Desenvolvimento",
-      period: "Set/2024 – Dez/2024",
-      duration: "4 meses",
-      location: "Belo Horizonte, Minas Gerais, Brasil",
-      description: "Suporte técnico em hardware e software e manutenção de estações. Administração de Office 365 e Azure; automações com Copilot e dashboards em Power BI para análise de dados. Colaboração em otimização de processos de TI e documentação técnica."
-    },
-    {
-      company: "Nattive Tecnologia",
-      companyUrl: "https://nattive.com.br",
-      role: "Estagiário de TI",
-      period: "set de 2023 - set de 2024",
-      duration: "1 ano 1 mês",
-      location: "Belo Horizonte, Minas Gerais, Brasil · Presencial",
-      description: "Suporte técnico remoto e presencial (LogMeIn/AnyDesk), configuração de rede/VPN e manutenção de estações. Instalação de softwares, gestão de chamados e suporte a Office 365 e antivírus. Iniciação em consultas SQL e uso do painel Azure."
-    },
-    {
-      company: "Rti Solucoes Inteligentes",
-      companyUrl: "http://rtisolutions.com.br",
-      role: "Suporte técnico",
-      period: "jan de 2023 - set de 2023",
-      duration: "9 meses",
-      location: "Belo Horizonte, Minas Gerais, Brasil · Híbrida",
-      description: "Suporte técnico a clientes com acessos remotos, instalação de softwares e drivers e configuração de dispositivos. Configuração de compartilhamento em rede e resolução de demandas técnicas diárias."
-    }
-  ];
-
-  const projects = [
-    {
-      title: "Startup 10xDev",
-      category: "10XDEV",
-      tags: ["Next.js", "TypeScript", "Supabase"],
-      image: "/10xdev-banner.png",
-      description: "Plataforma full-stack para desenvolvimento ágil: gestão de projetos, biblioteca de CardFeatures (blocos de código reutilizáveis), integração GitSync com GitHub e dashboards para equipes.",
-      demoUrl: "https://10xdev.com.br"
-    },
-    {
-      title: "Alavanca Dash",
-      category: "ALAVANCA DASH",
-      tags: ["Next.js", "TypeScript", "Supabase"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-      description: "Plataforma de gestão para consórcio: leads, clientes, cotas, comissões e equipes. Dashboard web com edição de imagens via IA (Gemini) e integração via webhooks."
-    }
-  ];
-
-  const techStackGroups = [
-    {
-      label: "Frontend",
-      techs: [
-        { name: "React", icon: "react", level: "Intermediate", progress: 65, color: "text-[#61DAFB]", barColor: "#61DAFB" },
-        { name: "Next.js", icon: "nextdotjs", level: "Intermediate", progress: 58, color: "text-[#FFFFFF]", barColor: "#FFFFFF" },
-        { name: "Tailwind", icon: "tailwindcss", level: "Intermediate", progress: 70, color: "text-[#38B2AC]", barColor: "#38B2AC" },
-      ]
-    },
-    {
-      label: "Backend",
-      techs: [
-        { name: "Node.js", icon: "nodedotjs", level: "Intermediate", progress: 68, color: "text-[#339933]", barColor: "#339933" },
-        { name: "Express", icon: "express", level: "Intermediate", progress: 65, color: "text-[#FFFFFF]", barColor: "#FFFFFF" },
-        { name: "TypeScript", icon: "typescript", level: "Intermediate", progress: 62, color: "text-[#3178C6]", barColor: "#3178C6" },
-        { name: "Zod", icon: "zod", level: "Intermediate", progress: 55, color: "text-[#3E67B1]", barColor: "#3E67B1" },
-      ]
-    },
-    {
-      label: "Database",
-      techs: [
-        { name: "Supabase", icon: "supabase", level: "Intermediate", progress: 68, color: "text-[#3ECF8E]", barColor: "#3ECF8E" },
-        { name: "PostgreSQL", icon: "postgresql", level: "Intermediate", progress: 55, color: "text-[#336791]", barColor: "#336791" },
-      ]
-    },
-    {
-      label: "Python",
-      techs: [
-        { name: "Python", icon: "python", level: "Beginner", progress: 45, color: "text-[#FFD43B]", barColor: "#FFD43B" },
-        { name: "Django", icon: "django", level: "Beginner", progress: 50, color: "text-[#44B78B]", barColor: "#44B78B" },
-      ]
-    },
-    {
-      label: "DevOps & Tools",
-      techs: [
-        { name: "Docker", icon: "docker", level: "Beginner", progress: 40, color: "text-[#2496ED]", barColor: "#2496ED" },
-        { name: "Azure", icon: "azure", level: "Intermediate", progress: 48, color: "text-[#0078D4]", barColor: "#0078D4", useDevicon: "azure" },
-        { name: "GitHub", icon: "github", level: "Intermediate", progress: 60, color: "text-[#ffffff]", barColor: "#ffffff" },
-      ]
-    },
-    {
-      label: "Testing & Outros",
-      techs: [
-        { name: "Jest", icon: "jest", level: "Beginner", progress: 45, color: "text-[#C21325]", barColor: "#C21325" },
-        { name: "Go", icon: "go", level: "Beginner", progress: 10, color: "text-[#00ADD8]", barColor: "#00ADD8" },
-      ]
-    },
-  ];
-
-  const filteredProjects = activeFilter === 'ALL' 
-    ? projects 
+  const filteredProjects = activeFilter === 'ALL'
+    ? projects
     : projects.filter(p => p.category === activeFilter);
 
   return (
@@ -159,7 +35,7 @@ const Portfolio = () => {
       <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-cyan-500/10 rounded-full blur-[120px] z-0 animate-pulse pointer-events-none"></div>
       <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/10 rounded-full blur-[120px] z-0 animate-pulse pointer-events-none"></div>
 
-      {/* Navbar - campo fixo separado no topo */}
+      {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 w-full bg-[#020202]/98 backdrop-blur-xl border-b border-cyan-500/20">
         <div className="container mx-auto px-4 md:px-8 flex items-center justify-between py-4">
           <a href="#" className="font-mono text-xl font-bold tracking-tighter text-white hover:text-cyan-400 transition-colors flex items-center gap-1">
@@ -167,12 +43,12 @@ const Portfolio = () => {
             <span>AUGUSTO</span>
             <span className="text-cyan-400">/&gt;</span>
           </a>
-          
+
           <div className="hidden md:flex items-center justify-center flex-1 gap-8 lg:gap-12 text-sm font-medium font-mono tracking-widest">
             {['Portfolio', 'Experience', 'Education', 'Tools'].map((item) => (
-              <a 
-                key={item} 
-                href={`#${item.toLowerCase()}`} 
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
                 className="text-gray-400 hover:text-cyan-400 transition-colors flex items-center gap-1"
               >
                 <span className="text-cyan-400">&lt;</span>
@@ -209,7 +85,7 @@ const Portfolio = () => {
                 <span className="text-cyan-500 font-mono">Full Stack</span> Developer
               </h3>
             </div>
-            
+
             <div className="flex flex-col gap-4 text-gray-400 max-w-lg font-mono text-sm border-l-2 border-cyan-500/30 pl-6 py-2 bg-gradient-to-r from-cyan-500/5 to-transparent">
               <div className="flex items-center gap-3 group cursor-pointer hover:text-cyan-300 transition-colors">
                 <Mail className="h-5 w-5 text-cyan-500 group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
@@ -253,12 +129,12 @@ const Portfolio = () => {
             <div className="absolute -inset-8 rounded-full border border-cyan-500/20 border-dashed animate-spin-slow"></div>
             <div className="absolute -inset-4 rounded-full border border-purple-500/20 border-dotted animate-spin-slow-reverse"></div>
             <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 via-purple-500 to-cyan-500 opacity-30 blur-xl group-hover:opacity-60 transition-opacity duration-500"></div>
-            
+
             <div className="relative h-64 w-64 md:h-80 md:w-80 rounded-full p-1 bg-gradient-to-tr from-cyan-500 to-purple-600 shadow-[0_0_50px_rgba(34,211,238,0.3)] overflow-hidden z-10 flex items-center justify-center bg-[#020202]">
                <div className="h-full w-full rounded-full overflow-hidden bg-[#020202] relative flex items-center justify-center">
-                  <img 
-                    src="/avatar.png" 
-                    alt="Augusto Amado" 
+                  <img
+                    src="/avatar.png"
+                    alt="Augusto Amado"
                     className="w-full h-full object-cover"
                     onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400"; }}
                   />
@@ -274,21 +150,21 @@ const Portfolio = () => {
           <div className="space-y-6">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold flex items-center gap-3 text-white font-mono">
-                <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">&lt;</span> 
+                <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">&lt;</span>
                 Portfolio
-                <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">/&gt;</span> 
+                <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">/&gt;</span>
               </h2>
               <p className="text-gray-500 font-mono text-sm border-l border-cyan-500/30 pl-4 uppercase tracking-wider">My Work</p>
             </div>
-            
+
             <div className="flex flex-wrap gap-4">
               {['ALL', '10XDEV', 'ALAVANCA DASH'].map((filter) => (
                 <button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
                   className={`px-4 py-2 font-mono text-sm uppercase tracking-wider border transition-all duration-300 ${
-                    activeFilter === filter 
-                      ? 'bg-cyan-500/10 border-cyan-500 text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.2)]' 
+                    activeFilter === filter
+                      ? 'bg-cyan-500/10 border-cyan-500 text-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.2)]'
                       : 'bg-transparent border-cyan-500/20 text-gray-400 hover:border-cyan-500/50 hover:text-cyan-200'
                   }`}
                 >
@@ -300,12 +176,12 @@ const Portfolio = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
-              <Card key={index} className="group overflow-hidden border border-cyan-500/10 bg-[#080808] hover:border-cyan-500/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] hover:-translate-y-1 rounded-sm" data-testid={`project-${index}`}>
+              <Card key={index} className="group overflow-hidden border border-cyan-500/10 bg-[#080808] hover:border-cyan-500/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] hover:-translate-y-1 rounded-sm cursor-pointer" data-testid={`project-${index}`} onClick={() => project.slug && navigate(`/project/${project.slug}`)}>
                 <div className="relative aspect-video overflow-hidden border-b border-cyan-500/10">
                   <div className="absolute inset-0 bg-cyan-500/10 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
+                  <img
+                    src={project.image}
+                    alt={project.title}
                     className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-hover:grayscale-0 grayscale-[0.5]"
                   />
                   <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4 backdrop-blur-sm z-20">
@@ -313,13 +189,13 @@ const Portfolio = () => {
                     <div className="flex gap-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                         {project.codeUrl ? (
                           <Button variant="outline" size="sm" className="gap-2 border-cyan-500 text-cyan-400 hover:bg-cyan-950 rounded-none" asChild>
-                            <a href={project.codeUrl} target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" /> Code</a>
+                            <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}><Github className="h-4 w-4" /> Code</a>
                           </Button>
                         ) : (
                           <Button variant="outline" size="sm" className="gap-2 border-cyan-500 text-cyan-400 hover:bg-cyan-950 rounded-none" disabled><Github className="h-4 w-4" /> Code</Button>
                         )}
                         <Button size="sm" className="gap-2 bg-cyan-600 hover:bg-cyan-500 text-black font-bold rounded-none" asChild>
-                          <a href={project.demoUrl || "#"} target="_blank" rel="noopener noreferrer"><ExternalLink className="h-4 w-4" /> Demo</a>
+                          <a href={project.demoUrl || "#"} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}><ExternalLink className="h-4 w-4" /> Demo</a>
                         </Button>
                     </div>
                   </div>
@@ -353,7 +229,7 @@ const Portfolio = () => {
         <section id="experience" className="space-y-12">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold flex items-center gap-3 text-white font-mono">
-              <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">#</span> 
+              <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">#</span>
               Work_Experience
             </h2>
           </div>
@@ -362,7 +238,7 @@ const Portfolio = () => {
             {experiences.map((exp, index) => (
               <div key={index} className="relative pl-8 md:pl-12 group" data-testid={`experience-${index}`}>
                 <div className="absolute -left-[5px] top-2 h-2.5 w-2.5 bg-[#020202] border border-cyan-500 group-hover:bg-cyan-400 group-hover:shadow-[0_0_10px_rgba(34,211,238,0.8)] transition-all duration-300 rotate-45"></div>
-                
+
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-gray-100 group-hover:text-cyan-400 transition-colors">{exp.role}</h3>
@@ -381,11 +257,11 @@ const Portfolio = () => {
                     {exp.period}
                   </div>
                 </div>
-                
+
                 <p className="text-sm text-gray-400 mb-4 flex items-center gap-2 font-mono">
                   <MapPin className="h-3 w-3 text-cyan-500" /> {exp.location}
                 </p>
-                
+
                 <div className="relative">
                     <div className="absolute left-0 top-0 bottom-0 w-1 bg-cyan-500/20 group-hover:bg-cyan-500/50 transition-colors"></div>
                     <p className="text-gray-300 leading-relaxed text-sm md:text-base pl-6 py-2 bg-gradient-to-r from-cyan-950/5 to-transparent">
@@ -401,11 +277,11 @@ const Portfolio = () => {
         <section id="education" className="space-y-12">
            <div className="space-y-4">
             <h2 className="text-3xl font-bold flex items-center gap-3 text-white font-mono">
-              <BookOpen className="h-8 w-8 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" /> 
+              <BookOpen className="h-8 w-8 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
               Education
             </h2>
           </div>
-            
+
           <Card className="bg-[#080808] border border-cyan-500/20 hover:border-cyan-500/50 transition-all group max-w-3xl rounded-sm hover:shadow-[0_0_20px_rgba(34,211,238,0.1)]" data-testid="education-card">
             <CardHeader className="flex flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0 pb-6 border-b border-cyan-500/10">
               <div className="space-y-1">
@@ -434,7 +310,7 @@ const Portfolio = () => {
         <section id="tools" className="space-y-12 pb-32">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold flex items-center gap-3 text-white font-mono">
-              <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">&gt;</span> 
+              <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">&gt;</span>
               Tech_Stack
             </h2>
           </div>
@@ -467,7 +343,7 @@ const Portfolio = () => {
 
       <footer className="border-t border-cyan-500/20 py-12 bg-[#010101] relative overflow-hidden">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-24 bg-cyan-500/5 blur-[50px] pointer-events-none"></div>
-        
+
         <div className="container mx-auto px-4 text-center space-y-4 relative z-10">
           <div className="flex items-center justify-center gap-2 font-mono text-xl font-bold tracking-tighter opacity-50 hover:opacity-100 transition-opacity cursor-default">
             <span className="text-cyan-600">&lt;</span>
@@ -483,4 +359,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default HomePage;

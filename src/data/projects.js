@@ -13,7 +13,7 @@ export const projects = [
     slug: "flowcart",
     category: "FLOWCART",
     tags: ["React", "TypeScript", "Recharts"],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop",
+    image: "/flowcart-banner.png",
     description: "Painel de gestão para lojas online com dashboard de analytics (gráficos em tempo real), catálogo de produtos com carrinho, motor de automações com regras configuráveis e hub de integrações.",
     demoUrl: "https://flowcart-augusto.vercel.app"
   },

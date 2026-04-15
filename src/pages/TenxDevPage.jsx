@@ -29,7 +29,7 @@ const TenxDevPage = () => {
     <ProjectLayout
       title="10xDev"
       subtitle="Plataforma que transforma repositórios de código em bibliotecas visuais usando inteligência artificial"
-      description="Produto SaaS construído do zero como cofundador técnico. O desenvolvedor conecta seu repositório do GitHub, e a plataforma analisa o código automaticamente com 3 inteligências artificiais diferentes (Claude, GPT e Grok), gerando uma biblioteca visual organizada por funcionalidade. Inclui sistema de assinaturas com cobrança automática, painel de administração com moderação de conteúdo, e gestão de projetos em equipe."
+      description="SaaS construído do zero como cofundador e CTO. A premissa é simples: conecte um repositório do GitHub e a plataforma transforma o código em uma biblioteca visual organizada, navegável e com busca — automaticamente. Por baixo, 5 modelos de IA (Claude, GPT e Grok) analisam o código em paralelo e debatem entre si para chegar a um consenso antes de gerar qualquer conteúdo. O produto é completo: pipeline assíncrono de importação com progresso em tempo real, billing metered por token de IA via Stripe, webhooks do GitHub com validação HMAC, painel de admin com moderação, e gestão de equipes com permissões por nível."
       role="Cofundador e CTO"
       period="Jun/2025 - Presente"
       tags={[
@@ -48,10 +48,10 @@ const TenxDevPage = () => {
           Visao_Geral
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <StatCard value="3" label="IAs integradas" />
-          <StatCard value="40+" label="Funcionalidades na API" />
-          <StatCard value="6" label="Tipos de conteúdo" />
-          <StatCard value="10+" label="Etapas de importação" />
+          <StatCard value="5 LLMs" label="em debate por consenso" />
+          <StatCard value="Real-time" label="sync via GitHub Webhooks" />
+          <StatCard value="Metered" label="billing por token de IA" />
+          <StatCard value="40k+" label="linhas de código" />
         </div>
       </section>
 
@@ -91,17 +91,20 @@ const TenxDevPage = () => {
         {/* AI Multi-modelo */}
         <FeatureSection
           icon={<Brain className="h-5 w-5" />}
-          title="3 Inteligências Artificiais Trabalhando Juntas"
-          description="O sistema usa Claude (Anthropic), GPT (OpenAI) e Grok (XAI) ao mesmo tempo. Cada IA analisa o código separadamente, depois elas 'debatem' entre si e criticam as sugestões umas das outras. O resultado final é só o que as três concordam — garantindo qualidade muito superior a usar apenas uma IA."
+          title="5+ Modelos de IA em Debate"
+          description="O sistema roda 5 modelos simultaneamente: Claude Sonnet 4.6, Claude Opus 4.6, Claude Haiku 4.5, GPT-5.4 e GPT-5.4 mini. Cada um analisa o código de forma independente e sugere melhorias. Depois eles 'debatem' — as respostas são cruzadas e ranqueadas por consenso. O Grok (xAI) atua separadamente no agrupamento automático de cards e geração de diagramas de fluxo."
         >
           <div className="ml-14">
             <MediaPlaceholder label="Screenshot — Modal de sugestões de melhoria com múltiplos modelos" />
           </div>
           <div className="ml-14 mt-4 grid grid-cols-3 gap-3">
             {[
-              { name: "Claude", desc: "Anthropic Sonnet/Opus" },
-              { name: "GPT", desc: "OpenAI GPT-4" },
-              { name: "Grok", desc: "XAI fallback" },
+              { name: "Claude Sonnet 4.6", desc: "Anthropic — debate" },
+              { name: "Claude Opus 4.6", desc: "Anthropic — debate" },
+              { name: "Claude Haiku 4.5", desc: "Anthropic — debate" },
+              { name: "GPT-5.4", desc: "OpenAI — debate" },
+              { name: "GPT-5.4 mini", desc: "OpenAI — debate" },
+              { name: "Grok 4", desc: "xAI — grouping & flows" },
             ].map((model) => (
               <div key={model.name} className="bg-[#0a0a0a] border border-cyan-500/10 p-4 rounded-sm text-center">
                 <div className="text-cyan-400 font-mono font-bold text-sm">{model.name}</div>
@@ -222,11 +225,11 @@ const TenxDevPage = () => {
             <ul className="space-y-2 text-sm text-gray-400 font-mono">
               <li>Next.js 15 (App Router)</li>
               <li>React 19 + TypeScript</li>
-              <li>shadcn/ui (30+ componentes)</li>
-              <li>Recharts (dashboards)</li>
+              <li>shadcn/ui (50+ componentes)</li>
+              <li>SSE streaming (progresso em tempo real)</li>
+              <li>Optimistic updates (save/unsave)</li>
               <li>react-markdown + Prism</li>
-              <li>react-hook-form + Zod</li>
-              <li>DnD-Kit + Embla Carousel</li>
+              <li>DnD-Kit + react-hook-form</li>
             </ul>
           </div>
 
@@ -237,11 +240,11 @@ const TenxDevPage = () => {
             </h3>
             <ul className="space-y-2 text-sm text-gray-400 font-mono">
               <li>Node.js + Express + TypeScript</li>
-              <li>Anthropic Claude SDK</li>
-              <li>OpenAI SDK</li>
-              <li>Stripe SDK (billing)</li>
-              <li>GitHub API (OAuth + Webhooks)</li>
-              <li>JWT + Admin middleware</li>
+              <li>Multi-LLM: Claude + GPT + Grok (6 modelos)</li>
+              <li>SSE streaming (pipeline em tempo real)</li>
+              <li>Stripe SDK (metered billing)</li>
+              <li>GitHub App (OAuth + Webhooks)</li>
+              <li>Rate limiting em 5 camadas</li>
               <li>Concurrency limiter (8 ops)</li>
             </ul>
           </div>
@@ -255,9 +258,10 @@ const TenxDevPage = () => {
               <li>PostgreSQL via Supabase</li>
               <li>Supabase Auth (Google OAuth)</li>
               <li>Docker + npm workspaces</li>
-              <li>Vercel (frontend)</li>
-              <li>Azure (backend)</li>
+              <li>Azure (frontend + backend)</li>
               <li>HMAC-SHA256 webhook security</li>
+              <li>Graceful shutdown (SIGTERM/SIGINT)</li>
+              <li>Idempotency keys (anti-cobrança dupla)</li>
             </ul>
           </div>
         </div>

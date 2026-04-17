@@ -20,6 +20,8 @@ import { experiences } from "@/data/experiences";
 import { projects } from "@/data/projects";
 import { techStackGroups } from "@/data/techStack";
 
+const portfolioFilters = ['ALL', '10XDEV', 'ALAVANCA DASH'];
+
 const HomePage = () => {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('ALL');
@@ -218,7 +220,7 @@ const HomePage = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              {['ALL', '10XDEV', 'ALAVANCA DASH', 'FLOWCART'].map((filter) => (
+              {portfolioFilters.map((filter) => (
                 <button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}

@@ -1,6 +1,6 @@
 export const projects = [
   {
-    title: "10xDev",
+    title: "10xdev",
     slug: "10xdev",
     category: "10XDEV",
     tags: ["Next.js", "TypeScript", "Supabase"],
@@ -10,9 +10,9 @@ export const projects = [
     codeUrl: "https://github.com/LuizBertucci/10xdev"
   },
   {
-    title: "Alavanca Dash",
-    slug: "alavanca-dash",
-    category: "ALAVANCA DASH",
+    title: "10xconsorcios",
+    slug: "10xconsorcios",
+    category: "10XCONSORCIOS",
     tags: ["Next.js", "TypeScript", "Supabase"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
     description: "Sistema de gestão comercial para empresa de consórcio. Controla o funil de vendas completo: captura automática de contatos, painel visual de negociações, gestão de equipe com permissões e geração de imagens com IA.",

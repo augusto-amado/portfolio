@@ -20,7 +20,7 @@ import { experiences } from "@/data/experiences";
 import { projects } from "@/data/projects";
 import { techStackGroups } from "@/data/techStack";
 
-const portfolioFilters = ['ALL', '10XDEV', 'ALAVANCA DASH'];
+const portfolioFilters = ['ALL', '10XDEV', '10XCONSORCIOS'];
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -168,7 +168,7 @@ const HomePage = () => {
                 Next.js, React, Node.js, TypeScript, Supabase e PostgreSQL no dia a dia.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                Atualmente sou cofundador e CTO da 10xDev, onde lidero toda a arquitetura técnica.
+                Atualmente sou cofundador e CTO da 10xdev, onde lidero toda a arquitetura técnica.
                 Busco projetos freelance onde posso aplicar essa mesma mentalidade: entregar valor real, no prazo, com qualidade.
               </p>
             </div>

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import {
-  Users,
   Kanban,
   Webhook,
   Shield,
@@ -11,9 +10,7 @@ import {
   Video,
   Workflow,
   Database,
-  Server,
 } from 'lucide-react';
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import ProjectLayout, {
   MediaPlaceholder,
@@ -21,14 +18,14 @@ import ProjectLayout, {
   StatCard,
 } from '@/components/ProjectLayout';
 
-const AlavancaDashPage = () => {
+const TenxConsorciosPage = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
     <ProjectLayout
-      title="Alavanca Dash"
+      title="10xconsorcios"
       subtitle="Sistema de gestão comercial completo para empresa de consórcio — do primeiro contato até a venda fechada"
-      description="Plataforma web construída para a empresa Alavanca que centraliza todas as operações de venda de consórcio. Os contatos entram automaticamente no sistema (vindos de formulários e landing pages), passam por um painel visual de negociação com arrastar e soltar, e são acompanhados pela equipe até o fechamento. Inclui controle de equipe com diferentes níveis de acesso, gestão de cotas e comissões, e geração de imagens com inteligência artificial para marketing."
+      description="Plataforma web de gestão comercial para empresas de consórcio que centraliza todas as operações de venda. Os contatos entram automaticamente no sistema (vindos de formulários e landing pages), passam por um painel visual de negociação com arrastar e soltar, e são acompanhados pela equipe até o fechamento. Inclui controle de equipe com diferentes níveis de acesso, gestão de cotas e comissões, e geração de imagens com inteligência artificial para marketing."
       role="Desenvolvedor Full Stack"
       period="2024 - Presente"
       tags={[
@@ -264,4 +261,4 @@ const AlavancaDashPage = () => {
   );
 };
 
-export default AlavancaDashPage;
+export default TenxConsorciosPage;

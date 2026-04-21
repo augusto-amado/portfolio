@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import AlavancaDashPage from "./pages/AlavancaDashPage";
+import TenxConsorciosPage from "./pages/TenxConsorciosPage";
 import TenxDevPage from "./pages/TenxDevPage";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/project/alavanca-dash" element={<AlavancaDashPage />} />
+          <Route path="/project/10xconsorcios" element={<TenxConsorciosPage />} />
           <Route path="/project/10xdev" element={<TenxDevPage />} />
         </Routes>
       </BrowserRouter>

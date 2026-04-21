@@ -1,26 +1,48 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
+import { ArrowLeft, ExternalLink } from 'lucide-react';
+import GithubIcon from "@/components/GithubIcon";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
+const aspectMap = {
+  video: "aspect-video",
+  wide: "aspect-[16/10]",
+  square: "aspect-square",
+  portrait: "aspect-[4/5]",
+  mobile: "aspect-[9/16]",
+  tall: "aspect-[3/4]",
+  ultrawide: "aspect-[21/9]",
+};
+
 /**
  * Placeholder para screenshots/vídeos que serão adicionados depois.
- * label = texto descritivo do que vai naquele espaço.
+ * label = legenda descritiva (aparece embaixo, igual ao Screenshot real).
+ *
+ * aspect: "video" | "wide" | "square" | "portrait" | "mobile" | "tall" | "ultrawide"
  */
 export const MediaPlaceholder = ({ label, aspect = "video", span = 1 }) => {
-  const aspectClass = aspect === "video" ? "aspect-video" : aspect === "square" ? "aspect-square" : "aspect-[4/3]";
+  const aspectClass = aspectMap[aspect] || aspectMap.video;
   const spanClass = span === 2 ? "md:col-span-2" : "";
 
   return (
-    <div className={`${aspectClass} ${spanClass} rounded-sm border-2 border-dashed border-cyan-500/20 bg-[#0a0a0a] flex flex-col items-center justify-center gap-3 group hover:border-cyan-500/40 transition-colors`}>
-      <div className="h-12 w-12 rounded-full border border-cyan-500/30 flex items-center justify-center">
-        <svg className="h-6 w-6 text-cyan-500/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-        </svg>
+    <figure className={`space-y-2 ${spanClass}`}>
+      <div className={`${aspectClass} rounded-sm border-2 border-dashed border-cyan-500/20 bg-[#0a0a0a] flex flex-col items-center justify-center gap-3 group hover:border-cyan-500/40 transition-colors`}>
+        <div className="h-12 w-12 rounded-full border border-cyan-500/30 flex items-center justify-center">
+          <svg className="h-6 w-6 text-cyan-500/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+          </svg>
+        </div>
+        <span className="text-[10px] text-cyan-500/40 font-mono uppercase tracking-wider text-center px-4">
+          print pendente
+        </span>
       </div>
-      <span className="text-xs text-cyan-500/40 font-mono uppercase tracking-wider text-center px-4">{label}</span>
-    </div>
+      {label && (
+        <figcaption className="text-xs text-cyan-500/60 font-mono uppercase tracking-wider text-center px-2">
+          {label}
+        </figcaption>
+      )}
+    </figure>
   );
 };
 
@@ -133,7 +155,7 @@ const ProjectLayout = ({
             {codeUrl && (
               <Button variant="outline" className="h-12 px-6 gap-2 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.2)] transition-all font-mono" asChild>
                 <a href={codeUrl} target="_blank" rel="noopener noreferrer">
-                  <Github className="h-4 w-4" /> Source Code
+                  <GithubIcon className="h-4 w-4" /> Source Code
                 </a>
               </Button>
             )}

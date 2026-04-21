@@ -1,33 +1,31 @@
 import React, { useEffect } from 'react';
 import {
-  Github,
   Brain,
   CreditCard,
   Code2,
   Layers,
   ShieldCheck,
   Sparkles,
-  LayoutDashboard,
   Import,
-  GitBranch,
   Workflow,
   Database,
   BookOpen,
 } from 'lucide-react';
-import { Badge } from "@/components/ui/badge";
+import GithubIcon from '@/components/GithubIcon';
 import { Separator } from "@/components/ui/separator";
 import ProjectLayout, {
   MediaPlaceholder,
   FeatureSection,
   StatCard,
 } from '@/components/ProjectLayout';
+import Screenshot from '@/components/Screenshot';
 
 const TenxDevPage = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
     <ProjectLayout
-      title="10xDev"
+      title="10xdev"
       subtitle="Plataforma que transforma repositórios de código em bibliotecas visuais usando inteligência artificial"
       description="SaaS construído do zero como cofundador e CTO. A premissa é simples: conecte um repositório do GitHub e a plataforma transforma o código em uma biblioteca visual organizada, navegável e com busca — automaticamente. Por baixo, 5 modelos de IA (Claude, GPT e Grok) analisam o código em paralelo e debatem entre si para chegar a um consenso antes de gerar qualquer conteúdo. O produto é completo: pipeline assíncrono de importação com progresso em tempo real, billing metered por token de IA via Stripe, webhooks do GitHub com validação HMAC, painel de admin com moderação, e gestão de equipes com permissões por nível."
       role="Cofundador e CTO"
@@ -64,7 +62,13 @@ const TenxDevPage = () => {
           Preview
           <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">/&gt;</span>
         </h2>
-        <MediaPlaceholder label="Screenshot principal — Dashboard de códigos com cards e filtros" aspect="video" span={2} />
+        <Screenshot
+          src="/10xdev-dashboard-home.png"
+          alt="Dashboard da 10xDev com acessos rápidos, cards e filtros"
+          label="Dashboard — acessos rápidos, cards e filtros"
+          aspect="wide"
+          span={2}
+        />
       </section>
 
       <Separator className="bg-cyan-500/20" />
@@ -78,7 +82,7 @@ const TenxDevPage = () => {
 
         {/* GitSync */}
         <FeatureSection
-          icon={<Github className="h-5 w-5" />}
+          icon={<GithubIcon className="h-5 w-5" />}
           title="Conexão Direta com o GitHub"
           description="O desenvolvedor conecta seu repositório com um clique. A partir daí, a plataforma acompanha cada atualização automaticamente: quando código novo é enviado ao GitHub, o sistema detecta, analisa os arquivos e atualiza a biblioteca. Tudo acontece em segundo plano, sem nenhuma ação manual."
         >

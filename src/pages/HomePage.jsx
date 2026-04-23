@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Github,
-  Linkedin,
   Mail,
   MapPin,
   ExternalLink,
@@ -16,6 +14,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import TechIcon from "@/components/TechIcon";
+import GithubIcon from "@/components/GithubIcon";
+import LinkedinIcon from "@/components/LinkedinIcon";
 import { experiences } from "@/data/experiences";
 import { projects } from "@/data/projects";
 import { techStackGroups } from "@/data/techStack";
@@ -115,12 +115,12 @@ const HomePage = () => {
               <div className="flex gap-4">
                 <a href="https://github.com/augusto-amado" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="icon" className="h-12 w-12 rounded-none border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/20 hover:text-cyan-300 hover:border-cyan-500 shadow-[0_0_10px_rgba(34,211,238,0.1)] transition-all">
-                    <Github className="h-5 w-5" />
+                    <GithubIcon className="h-5 w-5" />
                   </Button>
                 </a>
                 <a href="https://www.linkedin.com/in/augusto-amado-89507823a/" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="icon" className="h-12 w-12 rounded-none border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/20 hover:text-cyan-300 hover:border-cyan-500 shadow-[0_0_10px_rgba(34,211,238,0.1)] transition-all">
-                    <Linkedin className="h-5 w-5" />
+                    <LinkedinIcon className="h-5 w-5" />
                   </Button>
                 </a>
               </div>
@@ -251,10 +251,10 @@ const HomePage = () => {
                     <div className="flex gap-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                         {project.codeUrl ? (
                           <Button variant="outline" size="sm" className="gap-2 border-cyan-500 text-cyan-400 hover:bg-cyan-950 rounded-none" asChild>
-                            <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}><Github className="h-4 w-4" /> Code</a>
+                            <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}><GithubIcon className="h-4 w-4" /> Code</a>
                           </Button>
                         ) : (
-                          <Button variant="outline" size="sm" className="gap-2 border-cyan-500 text-cyan-400 hover:bg-cyan-950 rounded-none" disabled><Github className="h-4 w-4" /> Code</Button>
+                          <Button variant="outline" size="sm" className="gap-2 border-cyan-500 text-cyan-400 hover:bg-cyan-950 rounded-none" disabled><GithubIcon className="h-4 w-4" /> Code</Button>
                         )}
                         <Button size="sm" className="gap-2 bg-cyan-600 hover:bg-cyan-500 text-black font-bold rounded-none" asChild>
                           <a href={project.demoUrl || "#"} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}><ExternalLink className="h-4 w-4" /> Demo</a>

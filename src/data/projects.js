@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "10xdev",
     slug: "10xdev",
-    category: "PESSOAL",
+    category: "CLIENTE",
     tags: ["Next.js", "TypeScript", "Supabase"],
     image: "/10xdev-banner.png",
     description: "Plataforma para desenvolvedores que conecta repositórios do GitHub, analisa o código com inteligência artificial e organiza tudo em uma biblioteca visual. Inclui sistema de pagamentos e painel de administração.",

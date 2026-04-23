@@ -20,7 +20,7 @@ import { experiences } from "@/data/experiences";
 import { projects } from "@/data/projects";
 import { techStackGroups } from "@/data/techStack";
 
-const portfolioFilters = ['ALL', 'PESSOAL', 'CLIENTE'];
+const portfolioFilters = ['ALL', 'CLIENTE', 'PESSOAL'];
 
 const HomePage = () => {
   const navigate = useNavigate();

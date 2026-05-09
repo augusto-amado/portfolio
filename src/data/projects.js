@@ -1,5 +1,15 @@
 export const projects = [
   {
+    title: "10xmkt",
+    slug: "10xmkt",
+    category: "CLIENTE",
+    tags: ["Next.js", "TypeScript", "Supabase", "Claude", "GPT", "Gemini"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+    description: "Plataforma de marketing analytics que conecta Google Sheets com múltiplos modelos de IA para gerar relatórios automáticos, analisar campanhas e criar roteiros de vídeo.",
+    demoUrl: null,
+    codeUrl: null
+  },
+  {
     title: "10xdev",
     slug: "10xdev",
     category: "CLIENTE",

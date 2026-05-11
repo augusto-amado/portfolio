@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   Kanban,
   Webhook,
@@ -19,8 +19,6 @@ import ProjectLayout, {
 } from '@/components/ProjectLayout';
 
 const TenxConsorciosPage = () => {
-  useEffect(() => { window.scrollTo(0, 0); }, []);
-
   return (
     <ProjectLayout
       title="10xconsorcios"

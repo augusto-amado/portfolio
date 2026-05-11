@@ -45,6 +45,12 @@
   }
 }
 
+@layer utilities {
+  .drop-glow-cyan {
+    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.8));
+  }
+}
+
 /* Typing effect - blinking cursor after console.log */
 .typing-effect::after {
   content: "|";

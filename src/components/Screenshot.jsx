@@ -1,24 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { X, ZoomIn } from 'lucide-react';
 
-const aspectMap = {
-  video: 'aspect-video',
-  wide: 'aspect-[16/10]',
-  square: 'aspect-square',
-  portrait: 'aspect-[4/5]',
-  mobile: 'aspect-[9/16]',
-  tall: 'aspect-[3/4]',
-  ultrawide: 'aspect-[21/9]',
-};
-
-/**
- * Screenshot com lightbox ao clicar. Usa object-contain para mostrar o print inteiro
- * sem cortar. Legenda aparece abaixo da imagem.
- *
- * aspect: "video" | "wide" | "square" | "portrait" | "mobile" | "tall" | "ultrawide"
- * span: 1 | 2 (ocupa 2 colunas em md+)
- */
-const Screenshot = ({ src, label, alt, aspect = 'video', span = 1 }) => {
+const Screenshot = ({ src, label, alt, span = 1 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -35,7 +18,6 @@ const Screenshot = ({ src, label, alt, aspect = 'video', span = 1 }) => {
     };
   }, [isOpen]);
 
-  const aspectClass = aspectMap[aspect] || aspectMap.video;
   const spanClass = span === 2 ? 'md:col-span-2' : '';
 
   return (
@@ -44,15 +26,15 @@ const Screenshot = ({ src, label, alt, aspect = 'video', span = 1 }) => {
         type="button"
         onClick={() => setIsOpen(true)}
         aria-label={label ? `Abrir print: ${label}` : 'Abrir print em tamanho maior'}
-        className={`relative ${aspectClass} w-full overflow-hidden rounded-sm border border-cyan-500/20 bg-[#0a0a0a] group cursor-zoom-in transition-colors hover:border-cyan-500/50`}
+        className="relative w-full overflow-hidden rounded-sm border border-cyan-500/20 group cursor-zoom-in transition-colors hover:border-cyan-500/50 block"
       >
         <img
           src={src}
           alt={alt || label || 'Screenshot do projeto'}
-          className="h-full w-full object-contain"
+          className="w-full h-auto block"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-[#020202]/0 group-hover:bg-[#020202]/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+        <div className="absolute inset-0 bg-[#020202]/0 group-hover:bg-[#020202]/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 pointer-events-none">
           <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-widest bg-[#0a0a0a]/80 border border-cyan-500/30 px-3 py-2 rounded-sm">
             <ZoomIn className="h-4 w-4" />
             Ampliar

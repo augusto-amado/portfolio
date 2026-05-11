@@ -21,8 +21,8 @@ const aspectMap = {
  *
  * aspect: "video" | "wide" | "square" | "portrait" | "mobile" | "tall" | "ultrawide"
  */
-export const MediaPlaceholder = ({ label, aspect = "video", span = 1 }) => {
-  const aspectClass = aspectMap[aspect] || aspectMap.video;
+export const MediaPlaceholder = ({ label, aspect = "wide", span = 1 }) => {
+  const aspectClass = aspectMap[aspect] || aspectMap.wide;
   const spanClass = span === 2 ? "md:col-span-2" : "";
 
   return (

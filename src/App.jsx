@@ -1,13 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import HomePage from "./pages/HomePage";
-import TenxConsorciosPage from "./pages/TenxConsorciosPage";
-import TenxDevPage from "./pages/TenxDevPage";
-import TenxMktPage from "./pages/TenxMktPage";
+import TenxConsorciosPage from "./pages/projects/TenxConsorciosPage";
+import TenxDevPage from "./pages/projects/TenxDevPage";
+import TenxMktPage from "./pages/projects/TenxMktPage";
 
 function App() {
   return (
     <div className="App dark bg-[#050505]">
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/project/10xconsorcios" element={<TenxConsorciosPage />} />

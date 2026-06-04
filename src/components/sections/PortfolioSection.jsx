@@ -61,6 +61,15 @@ const PortfolioSection = () => {
                 alt={project.title}
                 className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 group-hover:grayscale-0 grayscale-[0.5]"
               />
+              {project.status && (
+                <div className="absolute top-3 left-3 z-30 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-[#020202]/80 backdrop-blur-sm text-cyan-400 text-[10px] font-mono uppercase tracking-wider">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                  </span>
+                  {project.status}
+                </div>
+              )}
               <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4 backdrop-blur-sm z-20">
                 <h4 className="text-cyan-400 font-bold tracking-widest uppercase text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500">View Project</h4>
                 <div className="flex gap-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">

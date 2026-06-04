@@ -83,6 +83,7 @@ const ProjectLayout = ({
   description,
   role,
   period,
+  status,
   tags,
   demoUrl,
   codeUrl,
@@ -133,6 +134,15 @@ const ProjectLayout = ({
                 </span>
               )}
               {period && <span>{period}</span>}
+              {status && (
+                <span className="inline-flex items-center gap-2 text-cyan-400 border border-cyan-500/30 px-3 py-1 bg-cyan-500/5 rounded-full text-xs uppercase tracking-wider">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                  </span>
+                  {status}
+                </span>
+              )}
             </div>
           </div>
 

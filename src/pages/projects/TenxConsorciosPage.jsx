@@ -3,7 +3,6 @@ import {
   Kanban,
   Webhook,
   Shield,
-  Image,
   BarChart3,
   Layers,
   MessageSquare,
@@ -22,17 +21,18 @@ const TenxConsorciosPage = () => {
   return (
     <ProjectLayout
       title="10xconsorcios"
-      subtitle="Sistema de gestão comercial completo para empresa de consórcio — do primeiro contato até a venda fechada"
-      description="Plataforma web de gestão comercial para empresas de consórcio que centraliza todas as operações de venda. Os contatos entram automaticamente no sistema (vindos de formulários e landing pages), passam por um painel visual de negociação com arrastar e soltar, e são acompanhados pela equipe até o fechamento. Inclui controle de equipe com diferentes níveis de acesso, gestão de cotas e comissões, e geração de imagens com inteligência artificial para marketing."
-      role="Desenvolvedor Full Stack"
-      period="2024 - Presente"
+      subtitle="Sistema de gestão comercial completo para empresa de consórcio, do primeiro contato até a venda fechada"
+      description="Plataforma web de gestão comercial para empresas de consórcio que centraliza todas as operações de venda. Os contatos entram automaticamente no sistema (vindos de formulários e landing pages), passam por um painel visual de negociação com arrastar e soltar, e são acompanhados pela equipe até o fechamento. Inclui controle de equipe com diferentes níveis de acesso, gestão de cotas e comissões."
+      role="Desenvolvedor · primeiro projeto"
+      period="Ago/2025 - Nov/2025"
+      status="Em produção · ativo"
       tags={[
         "Next.js 15", "React 19", "TypeScript", "Node.js", "Express 5",
         "Supabase", "PostgreSQL", "Zod", "Docker", "Azure",
-        "Gemini AI", "Webhooks", "JWT", "RBAC", "GitHub Actions",
+        "Multi-tenant", "Webhook de Leads", "BotConversa", "Kanban CRM",
       ]}
-      demoUrl="https://www.alavancadash.com.br"
-      codeUrl="https://github.com/LuizBertucci/alavanca-dash"
+      demoUrl="https://www.10xconsorcios.com.br"
+      codeUrl="https://github.com/LuizBertucci/10x-consorcios"
     >
       {/* ─── Números de destaque ─── */}
       <section className="space-y-6">
@@ -43,8 +43,39 @@ const TenxConsorciosPage = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <StatCard value="13" label="Etapas de negociação" />
           <StatCard value="3" label="Níveis de acesso" />
-          <StatCard value="4" label="Integrações externas" />
+          <StatCard value="3" label="Integrações externas" />
           <StatCard value="25+" label="Funcionalidades na API" />
+        </div>
+      </section>
+
+      <Separator className="bg-cyan-500/20" />
+
+      {/* ─── Minha Contribuição ─── */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-bold flex items-center gap-3 text-white font-mono">
+          <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">$</span>
+          Minha_Contribuicao
+        </h2>
+        <div className="border-l-2 border-cyan-500/30 pl-6 py-2 bg-gradient-to-r from-cyan-500/5 to-transparent">
+          <p className="text-gray-300 leading-relaxed">
+            Este foi meu primeiro projeto como desenvolvedor. Entrei dando suporte e fui aprendendo na prática ao longo de ~200 commits, sendo que mais da metade foram correção de bugs e tarefas menores. Também participei de decisões de design da interface. A frente que assumi sozinho foi o webhook de captação de leads: foi onde aprendi, do zero, a implementar uma integração de verdade, lidando com payloads imprevisíveis, autenticação por token e o disparo automático pro WhatsApp.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {[
+            { feature: "Webhook de leads (liderei)", detail: "Inlead inbound aceitando JSON, form-data e text/plain, token via Bearer ou query, middleware de raw body, mapeamento multi-alias de campos, parsing de moeda BR e checagem de duplicidade" },
+            { feature: "Disparo pro WhatsApp", detail: "envio assíncrono do lead pro BotConversa (fire-and-forget) com timeout de 10s via AbortController, sem bloquear a resposta do webhook" },
+            { feature: "Sistema de conteúdos", detail: "biblioteca de vídeos de treinamento (YouTube) com redesign estilo Netflix, migração de localStorage pra API/DB e posts com sistema de tags" },
+            { feature: "Autenticação + schema", detail: "login JWT inicial, migração completa pra Supabase Auth em produção e migrations de Supabase/UUID" },
+            { feature: "Gestão de equipe", detail: "página de gerenciamento de equipe com formatação de telefone, ordenação e restrição de treinamentos a admin/gestor (RBAC)" },
+            { feature: "Deploy e infra", detail: "Dockerfile do frontend otimizado de 1.54GB para 275MB, deploy no Azure e correções de CORS em produção" },
+            { feature: "Suporte e bugs", detail: "~108 commits de correção: filtros de consultor, ajustes de UI/mobile, formatação de datas e segurança (helmet + rate limiting)" },
+          ].map((item) => (
+            <div key={item.feature} className="bg-[#0a0a0a] border border-cyan-500/10 p-4 rounded-sm hover:border-cyan-500/30 transition-colors">
+              <div className="text-cyan-400 font-mono font-bold text-sm">{item.feature}</div>
+              <div className="text-[11px] text-gray-500 font-mono mt-1 leading-snug">{item.detail}</div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -57,7 +88,7 @@ const TenxConsorciosPage = () => {
           Preview
           <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">/&gt;</span>
         </h2>
-        <MediaPlaceholder label="Screenshot principal — Dashboard com m\u00e9tricas e vis\u00e3o geral" aspect="video" span={2} />
+        <MediaPlaceholder label="Screenshot principal — Dashboard com métricas e visão geral" aspect="video" span={2} />
       </section>
 
       <Separator className="bg-cyan-500/20" />
@@ -73,7 +104,7 @@ const TenxConsorciosPage = () => {
         <FeatureSection
           icon={<Kanban className="h-5 w-5" />}
           title="Painel Visual de Vendas"
-          description="Todas as negociações organizadas em colunas visuais — basta arrastar um contato de uma etapa para outra. São 13 etapas configuráveis, desde o primeiro contato até a venda fechada. Cada contato mostra a origem, tipo de consórcio, valor estimado, avaliação e o consultor responsável."
+          description="Todas as negociações organizadas em colunas visuais: basta arrastar um contato de uma etapa para outra. São 13 etapas configuráveis, desde o primeiro contato até a venda fechada. Cada contato mostra a origem, tipo de consórcio, valor estimado, avaliação e o consultor responsável."
         >
           <div className="ml-14">
             <MediaPlaceholder label="Screenshot — Kanban board com leads em diferentes colunas" />
@@ -84,7 +115,7 @@ const TenxConsorciosPage = () => {
         <FeatureSection
           icon={<Webhook className="h-5 w-5" />}
           title="Captação Automática de Contatos"
-          description="Os contatos chegam ao sistema automaticamente — vindos de formulários (InLead), landing pages ou chatbots do WhatsApp (BotConversa). Nenhuma digitação manual: o sistema interpreta os dados recebidos, organiza as informações e já atribui o contato à equipe correta."
+          description="Os contatos chegam ao sistema automaticamente, vindos de formulários (InLead), landing pages ou chatbots do WhatsApp (BotConversa). Nenhuma digitação manual: o sistema interpreta os dados recebidos, organiza as informações e já atribui o contato à equipe correta."
         >
           <div className="ml-14 grid grid-cols-1 md:grid-cols-2 gap-4">
             <MediaPlaceholder label="Diagrama do fluxo — InLead → Webhook → Dashboard" />
@@ -119,22 +150,10 @@ const TenxConsorciosPage = () => {
         <FeatureSection
           icon={<Shield className="h-5 w-5" />}
           title="Gestão de Equipe com Permissões"
-          description="Três níveis de acesso: Administrador (controle total), Gestor (gerencia equipe e vendas) e Consultor (vê apenas seus contatos). Cada equipe trabalha isolada — um não vê os dados do outro. O admin pode convidar membros, ativar ou desativar acessos e definir quem faz o quê."
+          description="Três níveis de acesso: Administrador (controle total), Gestor (gerencia equipe e vendas) e Consultor (vê apenas seus contatos). Cada equipe trabalha isolada: um não vê os dados do outro. O admin pode convidar membros, ativar ou desativar acessos e definir quem faz o quê."
         >
           <div className="ml-14">
             <MediaPlaceholder label="Screenshot — Tela de gestão de equipe com membros e roles" />
-          </div>
-        </FeatureSection>
-
-        {/* IA Gemini */}
-        <FeatureSection
-          icon={<Image className="h-5 w-5" />}
-          title="Geração de Imagens com Inteligência Artificial"
-          description="A equipe de marketing pode criar ou editar imagens direto na plataforma, usando inteligência artificial (Google Gemini). Basta descrever o que quer em texto ou enviar uma imagem para ser modificada — o resultado sai na hora, pronto para usar em campanhas."
-        >
-          <div className="ml-14 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MediaPlaceholder label="Screenshot — Interface de edição de imagem com IA" />
-            <MediaPlaceholder label="Screenshot — Resultado gerado pela IA" />
           </div>
         </FeatureSection>
 
@@ -196,7 +215,6 @@ const TenxConsorciosPage = () => {
               <li>MVC (Routes → Controllers → Services → Models)</li>
               <li>Zod para validação</li>
               <li>Helmet + Rate Limiter</li>
-              <li>Google Gemini SDK</li>
               <li>JWT middleware + RBAC</li>
             </ul>
           </div>

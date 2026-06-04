@@ -21,18 +21,19 @@ import ProjectLayout, {
 const TenxMktPage = () => {
   return (
     <ProjectLayout
-      title="10xmkt"
+      title="10xMídia"
       subtitle="Plataforma que transforma dados brutos de campanhas em análises geradas por inteligência artificial"
-      description="SaaS de marketing analytics construído do zero como cofundador e CTO. O produto conecta planilhas do Google Sheets com dados de anúncios — Meta, Google Ads, TikTok — e usa múltiplos modelos de IA para gerar relatórios automáticos, responder perguntas sobre performance e criar roteiros de vídeo. A IA lê os dados, calcula ROAS, CPC, CTR e comparativos de período, depois sintetiza tudo em um relatório textual com recomendações práticas. O usuário ainda pode fazer perguntas em linguagem natural e receber respostas contextuais. Para gerar roteiros, o sistema rastreia o site da empresa com Firecrawl, extrai o briefing da marca e entrega scripts prontos para produção de conteúdo."
-      role="Cofundador e CTO"
+      description="SaaS de marketing analytics. O produto conecta planilhas do Google Sheets com dados de anúncios (Meta, Google Ads, TikTok) e usa múltiplos modelos de IA para gerar relatórios automáticos, responder perguntas sobre performance e criar roteiros de vídeo. A IA lê os dados, calcula ROAS, CPC, CTR e comparativos de período, depois sintetiza tudo em um relatório textual com recomendações práticas. Atuei em parceria com a equipe, num escopo focado em quatro sistemas de backend que sustentam o produto, detalhados na seção abaixo."
+      role="Desenvolvedor Full Stack"
       period="Abr/2025 - Presente"
+      status="Em produção · ativo"
       tags={[
         "Next.js 16", "React 19", "TypeScript", "Node.js", "Express 5",
         "Supabase", "PostgreSQL", "Anthropic Claude", "OpenAI GPT", "Google Gemini",
         "Stripe", "Google Sheets API", "Firecrawl", "Recharts", "shadcn/ui",
         "Tailwind CSS", "Zod", "OAuth",
       ]}
-      demoUrl={null}
+      demoUrl="https://10xmidia.com.br"
       codeUrl={null}
     >
       {/* ─── Números de destaque ─── */}
@@ -46,6 +47,34 @@ const TenxMktPage = () => {
           <StatCard value="Multi-sheet" label="Google Sheets + CSV" />
           <StatCard value="Metered" label="billing por crédito de IA" />
           <StatCard value="Real-time" label="KPIs e gráficos" />
+        </div>
+      </section>
+
+      <Separator className="bg-cyan-500/20" />
+
+      {/* ─── Minha Contribuição ─── */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-bold flex items-center gap-3 text-white font-mono">
+          <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">$</span>
+          Minha_Contribuicao
+        </h2>
+        <div className="border-l-2 border-cyan-500/30 pl-6 py-2 bg-gradient-to-r from-cyan-500/5 to-transparent">
+          <p className="text-gray-300 leading-relaxed">
+            Trabalhei em parceria com a equipe num escopo focado: não toquei na maior parte da UI de dashboards e gráficos. Minha frente foi o backend que sustenta o produto, as quatro camadas pelas quais todo dado, todo pagamento e toda chamada de IA precisam passar: identidade, ingestão de dados, billing e o motor de análise. São sistemas menores em superfície de tela, mas que ficam no caminho crítico de tudo que a plataforma faz.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-3">
+          {[
+            { feature: "Login com Google", detail: "Supabase Auth signInWithOAuth + troca de code por sessão no server route do Next, com normalização de redirect contra open-redirect" },
+            { feature: "Conexão Google Sheets (OAuth)", detail: "fluxo OAuth com scope spreadsheets.readonly, state nonce anti-CSRF (crypto 32 bytes), refresh token persistido e endpoints de status/disconnect" },
+            { feature: "Billing Stripe metered", detail: "reuso de customer por email+platform, idempotency keys, checkout com Pix/boleto, webhook com verificação de assinatura e ledger via customer.balance" },
+            { feature: "Análises de IA", detail: "gateway multi-provedor (Claude, GPT, Gemini), pre-check de saldo antes da chamada, meter events por token e audit log de uso por operação" },
+          ].map((item) => (
+            <div key={item.feature} className="bg-[#0a0a0a] border border-cyan-500/10 p-4 rounded-sm hover:border-cyan-500/30 transition-colors">
+              <div className="text-cyan-400 font-mono font-bold text-sm">{item.feature}</div>
+              <div className="text-[11px] text-gray-500 font-mono mt-1 leading-snug">{item.detail}</div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -78,7 +107,7 @@ const TenxMktPage = () => {
         <FeatureSection
           icon={<Table2 className="h-5 w-5" />}
           title="Conexão com Google Sheets"
-          description="O usuário cola a URL da planilha e o sistema importa os dados automaticamente via OAuth. Suporta múltiplas abas (Meta, Google Ads, TikTok) em um único projeto. Um modal de mapeamento permite mapear cada coluna da planilha para as métricas corretas — spend, revenue, leads, CPC, CTR — sem precisar formatar o arquivo."
+          description="O usuário cola a URL da planilha e o sistema importa os dados automaticamente via OAuth. Suporta múltiplas abas (Meta, Google Ads, TikTok) em um único projeto. Um modal de mapeamento deixa o usuário ligar cada coluna da planilha à métrica certa (spend, revenue, leads, CPC, CTR) sem precisar formatar o arquivo."
         >
           <div className="ml-14 grid grid-cols-1 md:grid-cols-2 gap-4">
             <MediaPlaceholder label="Screenshot — Modal de mapeamento de colunas" />
@@ -149,7 +178,7 @@ const TenxMktPage = () => {
         <FeatureSection
           icon={<Globe className="h-5 w-5" />}
           title="Briefing Automático a Partir do Site"
-          description="O sistema rastreia o site da empresa com Firecrawl — lê até 5 páginas (home, sobre, serviços, produtos) — e usa IA para extrair nome, produto, público-alvo, diferenciais e tom de voz. O briefing gerado alimenta automaticamente a geração de roteiros e as análises de campanhas com contexto da marca."
+          description="O sistema rastreia o site da empresa com Firecrawl, lendo até 5 páginas (home, sobre, serviços, produtos), e usa IA para extrair nome, produto, público-alvo, diferenciais e tom de voz. O briefing gerado alimenta automaticamente a geração de roteiros e as análises de campanhas com contexto da marca."
         >
           <div className="ml-14">
             <MediaPlaceholder label="Screenshot — Card de briefing da empresa gerado pelo site" />
@@ -164,12 +193,12 @@ const TenxMktPage = () => {
         >
           <div className="ml-14 grid grid-cols-3 gap-3">
             {[
-              { name: "Claude Sonnet 4.6", desc: "Anthropic — análise" },
-              { name: "Claude Opus 4.6", desc: "Anthropic — análise" },
-              { name: "GPT-5.4", desc: "OpenAI — análise" },
-              { name: "GPT-5.4 mini", desc: "OpenAI — análise" },
-              { name: "GPT-5.4 pro", desc: "OpenAI — análise" },
-              { name: "Gemini 2.5 Pro", desc: "Google — análise" },
+              { name: "Claude Sonnet 4.6", desc: "Anthropic · análise" },
+              { name: "Claude Opus 4.6", desc: "Anthropic · análise" },
+              { name: "GPT-5.4", desc: "OpenAI · análise" },
+              { name: "GPT-5.4 mini", desc: "OpenAI · análise" },
+              { name: "GPT-5.4 pro", desc: "OpenAI · análise" },
+              { name: "Gemini 2.5 Pro", desc: "Google · análise" },
             ].map((model) => (
               <div key={model.name} className="bg-[#0a0a0a] border border-cyan-500/10 p-4 rounded-sm text-center">
                 <div className="text-cyan-400 font-mono font-bold text-sm">{model.name}</div>
@@ -280,15 +309,15 @@ const TenxMktPage = () => {
           {[
             {
               title: "Normalização de dados de múltiplos canais",
-              desc: "Cada canal (Meta, Google Ads, TikTok) exporta planilhas em formatos diferentes — colunas com nomes distintos, datas em formatos variados, métricas com unidades inconsistentes. O sistema usa um modal de mapeamento onde o usuário liga cada coluna da planilha à métrica correta. Internamente, um pipeline de normalização padroniza todos os dados antes de qualquer cálculo ou chamada de IA.",
+              desc: "Cada canal (Meta, Google Ads, TikTok) exporta planilhas em formatos diferentes: colunas com nomes distintos, datas em formatos variados, métricas com unidades inconsistentes. O sistema usa um modal de mapeamento onde o usuário liga cada coluna da planilha à métrica correta. Internamente, um pipeline de normalização padroniza todos os dados antes de qualquer cálculo ou chamada de IA.",
             },
             {
               title: "Cálculo de KPIs com filtros combinados client-side",
-              desc: "Os gráficos e cards de KPI precisam refletir simultaneamente filtros de período (semana atual, mês, personalizado) e canal (todos, Meta, Google Ads). Toda a lógica de agregação roda no cliente usando os dados já carregados — sem re-fetches. Isso exigiu funções utilitárias precisas para calcular totais de período, tendências de variação e séries semanais a partir de arrays de linhas brutas.",
+              desc: "Os gráficos e cards de KPI precisam refletir simultaneamente filtros de período (semana atual, mês, personalizado) e canal (todos, Meta, Google Ads). Toda a lógica de agregação roda no cliente usando os dados já carregados, sem re-fetches. Isso exigiu funções utilitárias precisas para calcular totais de período, tendências de variação e séries semanais a partir de arrays de linhas brutas.",
             },
             {
               title: "Geração de relatório com contexto completo da planilha",
-              desc: "O prompt enviado para a IA precisa incluir os dados da planilha de forma compacta, as métricas calculadas e o briefing da empresa — sem extrapolar o context window do modelo. O backend serializa os dados em formato resumido, calcula os KPIs no servidor e monta um prompt estruturado que entrega contexto suficiente para análise sem desperdício de tokens.",
+              desc: "O prompt enviado para a IA precisa incluir os dados da planilha de forma compacta, as métricas calculadas e o briefing da empresa, sem extrapolar o context window do modelo. O backend serializa os dados em formato resumido, calcula os KPIs no servidor e monta um prompt estruturado que entrega contexto suficiente para análise sem desperdício de tokens.",
             },
             {
               title: "Briefing de empresa via rastreamento de site",

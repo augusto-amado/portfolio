@@ -11,17 +11,17 @@ const AboutSection = () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div className="md:col-span-2 space-y-6">
         <p className="text-gray-300 text-lg leading-relaxed">
-          Desenvolvedor Full Stack com experiência real construindo produtos do zero — do banco de dados à interface do usuário.
+          Desenvolvedor Full Stack com experiência real construindo produtos do zero, do banco de dados à interface do usuário.
           Já criei plataformas SaaS com inteligência artificial, sistemas de gestão comercial em produção e integrações
           com APIs de pagamento, GitHub e WhatsApp.
         </p>
         <p className="text-gray-400 leading-relaxed">
-          Meu diferencial é transformar ideias em software funcionando rápido. Não entrego só código — entrego
+          Meu diferencial é transformar ideias em software funcionando rápido. Não entrego só código, entrego
           produto: com autenticação, painel admin, deploy automatizado e pronto pra escalar. Trabalho com
           Next.js, React, Node.js, TypeScript, Supabase e PostgreSQL no dia a dia.
         </p>
         <p className="text-gray-400 leading-relaxed">
-          Atualmente sou cofundador e CTO da 10xdev, onde lidero toda a arquitetura técnica.
+          Atualmente sou cofundador da 10xDev, onde atuo na arquitetura e no desenvolvimento full-stack do produto.
           Busco projetos freelance onde posso aplicar essa mesma mentalidade: entregar valor real, no prazo, com qualidade.
         </p>
       </div>

@@ -2,7 +2,7 @@ export const experiences = [
   {
     company: "Startup 10xDev",
     companyUrl: "https://10xdev.com.br",
-    role: "Cofundador e CTO",
+    role: "Cofundador & Desenvolvedor Full Stack",
     period: "jun de 2025 - o momento",
     duration: "9 meses",
     location: "Belo Horizonte, Minas Gerais, Brasil · Remota",

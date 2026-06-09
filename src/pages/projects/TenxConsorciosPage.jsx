@@ -25,7 +25,7 @@ const TenxConsorciosPage = () => {
       description="Plataforma web de gestão comercial para empresas de consórcio que centraliza todas as operações de venda. Os contatos entram automaticamente no sistema (vindos de formulários e landing pages), passam por um painel visual de negociação com arrastar e soltar, e são acompanhados pela equipe até o fechamento. Inclui controle de equipe com diferentes níveis de acesso, gestão de cotas e comissões."
       role="Desenvolvedor · primeiro projeto"
       period="Ago/2025 - Nov/2025"
-      status="Em produção · ativo"
+      status="Pausado"
       tags={[
         "Next.js 15", "React 19", "TypeScript", "Node.js", "Express 5",
         "Supabase", "PostgreSQL", "Zod", "Docker", "Azure",

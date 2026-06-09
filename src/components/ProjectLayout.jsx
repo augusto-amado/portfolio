@@ -134,15 +134,18 @@ const ProjectLayout = ({
                 </span>
               )}
               {period && <span>{period}</span>}
-              {status && (
-                <span className="inline-flex items-center gap-2 text-cyan-400 border border-cyan-500/30 px-3 py-1 bg-cyan-500/5 rounded-full text-xs uppercase tracking-wider">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+              {status && (() => {
+                const isPaused = /pausad|pausa/i.test(status);
+                return (
+                  <span className={`inline-flex items-center gap-2 border px-3 py-1 rounded-full text-xs uppercase tracking-wider ${isPaused ? "text-amber-400 border-amber-500/30 bg-amber-500/5" : "text-cyan-400 border-cyan-500/30 bg-cyan-500/5"}`}>
+                    <span className="relative flex h-2 w-2">
+                      {!isPaused && <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>}
+                      <span className={`relative inline-flex rounded-full h-2 w-2 ${isPaused ? "bg-amber-500" : "bg-cyan-500"}`}></span>
+                    </span>
+                    {status}
                   </span>
-                  {status}
-                </span>
-              )}
+                );
+              })()}
             </div>
           </div>
 

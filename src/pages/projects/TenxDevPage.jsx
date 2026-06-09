@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Brain,
   CreditCard,
@@ -13,6 +14,8 @@ import {
   Database,
   BookOpen,
   LayoutTemplate,
+  History,
+  Bell,
 } from 'lucide-react';
 import GithubIcon from '@/components/GithubIcon';
 import { Separator } from "@/components/ui/separator";
@@ -65,13 +68,15 @@ const TenxDevPage = () => {
         </h2>
         <div className="border-l-2 border-cyan-500/30 pl-6 py-2 bg-gradient-to-r from-cyan-500/5 to-transparent">
           <p className="text-gray-300 leading-relaxed">
-            Projeto tocado em parceria com o Luiz Bertucci. Atuei em decisões de arquitetura, implementação de features completas e no deploy da infraestrutura. Duas features foram minhas do começo ao fim: o desenho de arquitetura, em que a IA lê o código de um card e gera um diagrama ASCII do fluxo, e a análise de commits, um review de IA que avalia a qualidade do código novo de uma seleção de commits. A 10xDev nasceu de uma dor real, que é usar IA pra facilitar a vida de dev, e a gente usa a própria plataforma pra evoluir ela: a feature de sugestões analisa o código da 10xDev e gera melhorias que a gente mesmo implementa, num ciclo em que o produto quase se melhora sozinho.
+            Projeto tocado em parceria com o Luiz Bertucci. Atuei em decisões de arquitetura, implementação de features completas e no deploy da infraestrutura. Algumas features foram minhas do começo ao fim: o desenho de arquitetura, em que a IA lê o código de um card e gera um diagrama ASCII do fluxo; a análise de commits, um review de IA que avalia a qualidade do código novo de uma seleção de commits e fica salva num histórico por projeto; o histórico unificado do projeto, uma timeline que junta os eventos do GitHub com tudo que a 10xDev gera; e o centro de notificações dentro da plataforma. A 10xDev nasceu de uma dor real, que é usar IA pra facilitar a vida de dev, e a gente usa a própria plataforma pra evoluir ela: a feature de sugestões analisa o código da 10xDev e gera melhorias que a gente mesmo implementa, num ciclo em que o produto quase se melhora sozinho.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {[
             { feature: "Desenho de arquitetura", detail: "a IA desenha o diagrama de arquitetura de cada card sozinha, e decide quando o card realmente merece um" },
-            { feature: "Análise de commits", detail: "revisor automático que lê o código novo e aponta problemas antes do merge, organizados por tipo e gravidade" },
+            { feature: "Análise de commits", detail: "revisor automático que lê o código novo e aponta problemas antes do merge, organizados por tipo e gravidade, com histórico por projeto" },
+            { feature: "Histórico do projeto", detail: "timeline única que junta commits do GitHub e tudo que a 10xDev gerou — imports, análises e melhorias — com filtro por fonte" },
+            { feature: "Notificações na plataforma", detail: "centro de notificações in-app com não-lidas, 4 níveis e convites aceitáveis direto do sino" },
             { feature: "Código sempre atualizado", detail: "garante que a IA analise sempre o código atual, nunca uma versão antiga que já mudou" },
             { feature: "Debate com juiz de IA", detail: "vários modelos discutem o código e um juiz dá o veredito; o histórico fica salvo pra marcar o que já foi resolvido" },
             { feature: "Docker + deploy Azure", detail: "configurei toda a infra de deploy (Docker + Azure) do zero, com publicação automática em produção" },
@@ -185,10 +190,32 @@ const TenxDevPage = () => {
         <FeatureSection
           icon={<GitCompare className="h-5 w-5" />}
           title="Análise de Commits com Review de IA"
-          description="O dev seleciona de 2 a 10 commits e pede uma análise. Um modelo entra como revisor sênior e avalia só a qualidade do código novo, usando os patches como evidência e ignorando o que já existia. O retorno é um resumo curto e uma lista de findings, cada um com categoria (security, performance, quality, architecture, best-practices, maintainability, scalability), severidade proporcional ao impacto provado e uma correção concreta que cabe em ~10 linhas, sempre em bloco de código. O prompt foi calibrado contra ruído: se o código está bom, a lista volta vazia em vez de inventar problema. Cada análise fica persistida com rota estável, então dá para copiar um link público do contexto e colar em qualquer IA. E uma rodada pode disparar vários modelos em paralelo, agrupados pelo mesmo job."
+          description="O dev seleciona de 2 a 10 commits e pede uma análise. Um modelo entra como revisor sênior e avalia só a qualidade do código novo, usando os patches como evidência e ignorando o que já existia. O retorno é um resumo curto e uma lista de findings, cada um com categoria (security, performance, quality, architecture, best-practices, maintainability, scalability), severidade proporcional ao impacto provado e uma correção concreta que cabe em ~10 linhas, sempre em bloco de código. O prompt foi calibrado contra ruído: se o código está bom, a lista volta vazia em vez de inventar problema. Toda análise fica num histórico por projeto, recuperável por commit ou por finding, com rota estável — dá para copiar um link público do contexto e colar em qualquer IA, e acompanhar a evolução da qualidade ao longo do tempo. E uma rodada pode disparar vários modelos em paralelo, agrupados pelo mesmo job."
         >
           <div className="ml-14">
-            <MediaPlaceholder label="Banner de análise de commits com findings por categoria e severidade" aspect="wide" />
+            <MediaPlaceholder label="Histórico de análises de commit do projeto, com findings por categoria e severidade" aspect="wide" />
+          </div>
+        </FeatureSection>
+
+        {/* Histórico do Projeto */}
+        <FeatureSection
+          icon={<History className="h-5 w-5" />}
+          title="Histórico Unificado do Projeto"
+          description="Uma timeline única que junta o que acontece no GitHub e o que acontece dentro da 10xDev. Num só lugar entram os commits do repositório, as importações (concluídas, em andamento ou com falha), as análises de commit geradas, as sugestões de melhoria e os cards adicionados — cada evento com sua origem (github ou 10xdev), data e link direto pro card ou análise correspondente. Tem filtro por fonte, então dá pra ver só o que veio do Git, só o que a plataforma produziu, ou os dois lado a lado."
+        >
+          <div className="ml-14">
+            <MediaPlaceholder label="Timeline do projeto com eventos de GitHub e 10xDev e filtro por fonte" aspect="wide" />
+          </div>
+        </FeatureSection>
+
+        {/* Notificações in-app */}
+        <FeatureSection
+          icon={<Bell className="h-5 w-5" />}
+          title="Centro de Notificações na Plataforma"
+          description="Além dos avisos externos (WhatsApp/Telegram), a plataforma tem um sino de notificações próprio, com contador de não-lidas e marcação individual ou em massa. São mais de 15 tipos em 4 níveis (info, sucesso, alerta, erro): card aprovado ou rejeitado, análise concluída, saldo baixo ou bloqueado, recarga confirmada, e convites de projeto que dá pra aceitar ou recusar direto da notificação. A criação é best-effort por design — se a notificação falhar, a ação principal (aprovar um card, recarregar saldo) nunca quebra."
+        >
+          <div className="ml-14">
+            <MediaPlaceholder label="Sino de notificações aberto com contador de não-lidas e convite com botões aceitar/recusar" aspect="wide" />
           </div>
         </FeatureSection>
 
@@ -285,6 +312,9 @@ const TenxDevPage = () => {
             </p>
             <p className="text-cyan-500/70 font-mono text-xs uppercase tracking-widest">
               Template como ponto zero. Cards como caminho.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              O starter tem página própria no portfólio, com a vitrine de 40 componentes que montei: <Link to="/project/template-nodejs" className="text-cyan-400 font-mono hover:text-cyan-300 underline underline-offset-2 decoration-cyan-500/40 hover:decoration-cyan-400 transition-colors">ver Template Node.js</Link>.
             </p>
             <Screenshot src="/10xdev-templates.png" alt="Repositório template-nodejs-express-next-supabase no GitHub" label="template-nodejs-express-next-supabase — repositório público na org 10xdev-startup" />
           </div>

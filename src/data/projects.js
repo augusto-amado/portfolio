@@ -3,7 +3,7 @@ export const projects = [
     title: "10xconsorcios",
     slug: "10xconsorcios",
     category: "CLIENTE",
-    status: "Em produção · ativo",
+    status: "Pausado",
     tags: ["Next.js", "TypeScript", "Supabase"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
     description: "Sistema de gestão comercial para empresa de consórcio. Controla o funil de vendas completo: captura automática de contatos, painel visual de negociações e gestão de equipe com permissões.",
@@ -33,13 +33,14 @@ export const projects = [
     codeUrl: null
   },
   {
-    title: "FlowCart",
-    slug: "flowcart",
-    category: "PESSOAL",
-    tags: ["React", "TypeScript", "Vite", "Tailwind"],
+    title: "Template Node.js",
+    slug: "template-nodejs",
+    category: "OPEN SOURCE",
+    status: "Open source · público",
+    tags: ["Next.js 16", "React 19", "Express 5", "TypeScript", "Supabase", "shadcn/ui"],
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop",
-    description: "Dashboard de gestão de loja com analytics, módulo de e-commerce e automações. Painel visual com métricas em tempo real, controle de estoque e relatórios de vendas.",
-    demoUrl: "https://flowcart-augusto-8cdxd41v6.vercel.app",
-    codeUrl: "https://github.com/augusto-amado/flowcart"
+    description: "Template full-stack open-source com uma biblioteca de 40 componentes em 6 categorias. Starter pronto para produção (Next.js 16 + Express 5 + Supabase) que outros devs usam como ponto de partida com um clique em 'Use this template'.",
+    demoUrl: null,
+    codeUrl: "https://github.com/10xdev-startup/template-nodejs-express-next-supabase"
   }
 ];

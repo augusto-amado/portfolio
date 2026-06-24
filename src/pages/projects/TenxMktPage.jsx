@@ -140,7 +140,11 @@ const TenxMktPage = () => {
           description="Cards de KPI mostram ROAS, CPC, CTR, Spend total e Leads com comparativo de variação em relação ao período anterior. Dois gráficos complementares: evolução semanal do ROAS e Spend vs Leads por semana. Filtros de período e canal atualizam tudo instantaneamente no lado do cliente, sem nova chamada à API."
         >
           <div className="ml-14 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <MediaPlaceholder label="Screenshot — Cards de KPI com indicadores de variação" />
+            <Screenshot
+              src="/10xmidia-report-kpis.png"
+              alt="Resumo semanal da 10xMídia com faturamento, investimento, ROAS, CPA, vendas, leads, CTR e CPC"
+              label="Resumo do relatório — KPIs e variação contra o período anterior"
+            />
             <MediaPlaceholder label="Screenshot — Gráfico Spend vs Leads semanal" />
           </div>
         </FeatureSection>

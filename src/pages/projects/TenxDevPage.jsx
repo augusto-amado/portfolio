@@ -366,21 +366,21 @@ const TenxDevPage = () => {
         {/* Templates */}
         <FeatureSection
           icon={<LayoutTemplate className="h-5 w-5" />}
-          title="Templates Prontos"
-          description="Cada stack tem suas decisões de arquitetura, ferramentas e configs de build, e montar isso do zero toda vez custa um tempo que poderia ir para o produto. Por isso existem templates prontos para as stacks mais usadas, cada um já estruturado com as boas práticas."
+          title="Template Full-Stack Open Source"
+          description="O template transforma as decisões repetitivas do início de um produto em uma base reutilizável. Ele conecta a fundação técnica da aplicação ao catálogo de códigos e features da 10xDev."
         >
           <div className="ml-14 space-y-4">
             <p className="text-gray-400 text-sm leading-relaxed">
-              O <a href="https://github.com/10xdev-startup/template-nodejs-express-next-supabase" target="_blank" rel="noopener noreferrer" className="text-cyan-400 font-mono hover:text-cyan-300 underline underline-offset-2 decoration-cyan-500/40 hover:decoration-cyan-400 transition-colors">10xdev-startup/template-nodejs-express-next-supabase</a> está publicado no GitHub como template público: um clique em "Use this template" e o repositório já está na conta do dev. A estrutura separa <span className="text-cyan-400 font-mono">backend/</span> e <span className="text-cyan-400 font-mono">frontend/</span> com TypeScript estrito dos dois lados. Já vem com sidebar de 3 modos de layout, shadcn/ui, Tailwind v4 e Supabase configurados. As configs de <span className="text-cyan-400 font-mono">.claude</span> e <span className="text-cyan-400 font-mono">.cursor</span> também estão incluídas, então o ambiente de IA entra junto.
+              O <a href="https://github.com/10xdev-startup/template-nodejs-express-next-supabase" target="_blank" rel="noopener noreferrer" className="text-cyan-400 font-mono hover:text-cyan-300 underline underline-offset-2 decoration-cyan-500/40 hover:decoration-cyan-400 transition-colors">10xdev-startup/template-nodejs-express-next-supabase</a> está publicado no GitHub como template público: um clique em "Use this template" cria uma cópia pronta na conta do dev. A estrutura separa <span className="text-cyan-400 font-mono">backend/</span> e <span className="text-cyan-400 font-mono">frontend/</span> com TypeScript estrito dos dois lados. Também entrega 39 componentes copiáveis, sidebar com 3 modos, Supabase, Tailwind CSS 3 e um ambiente de engenharia versionado em <span className="text-cyan-400 font-mono">.claude</span> e <span className="text-cyan-400 font-mono">.cursor</span>.
             </p>
             <p className="text-gray-400 text-sm leading-relaxed">
-              A partir daí, os cards da plataforma entram em cena: cada card é uma feature pronta para implementar. O dev navega pelo catálogo, escolhe o que quer adicionar e tem o passo a passo, os comandos e o código de referência à mão. A arquitetura já prevê expansão para outras stacks, cada uma com seu template base e seus cards correspondentes.
+              O template resolve o ponto de partida; os cards da plataforma resolvem a evolução. O dev navega pelo catálogo, escolhe a próxima feature e encontra contexto, comandos e código de referência para adaptar sobre uma arquitetura já conhecida.
             </p>
             <p className="text-cyan-500/70 font-mono text-xs uppercase tracking-widest">
               Template como ponto zero. Cards como caminho.
             </p>
             <p className="text-gray-400 text-sm leading-relaxed">
-              O starter tem página própria no portfólio, com a vitrine de 40 componentes que montei: <Link to="/project/template-nodejs" className="text-cyan-400 font-mono hover:text-cyan-300 underline underline-offset-2 decoration-cyan-500/40 hover:decoration-cyan-400 transition-colors">ver Template Node.js</Link>.
+              O starter tem uma página própria no portfólio, com a arquitetura e a vitrine de 39 componentes que implementei: <Link to="/project/template-nodejs" className="text-cyan-400 font-mono hover:text-cyan-300 underline underline-offset-2 decoration-cyan-500/40 hover:decoration-cyan-400 transition-colors">ver Template Node.js</Link>.
             </p>
             <Screenshot src="/10xdev-templates.png" alt="Repositório template-nodejs-express-next-supabase no GitHub" label="template-nodejs-express-next-supabase — repositório público na org 10xdev-startup" />
           </div>

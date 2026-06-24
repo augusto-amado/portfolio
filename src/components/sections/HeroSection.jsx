@@ -81,11 +81,12 @@ const HeroSection = () => (
 
       <div className="relative h-64 w-64 md:h-80 md:w-80 rounded-full p-1 bg-gradient-to-tr from-cyan-500 to-purple-600 shadow-[0_0_50px_rgba(34,211,238,0.3)] overflow-hidden z-10 flex items-center justify-center bg-[#020202]">
         <div className="h-full w-full rounded-full overflow-hidden bg-[#020202] relative flex items-center justify-center">
+          <span className="absolute text-6xl font-bold font-mono text-cyan-400/40 select-none">AA</span>
           <img
             src="/avatar.png"
             alt="Augusto Amado"
-            className="w-full h-full object-cover"
-            onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400"; }}
+            className="relative w-full h-full object-cover"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
           />
         </div>
       </div>

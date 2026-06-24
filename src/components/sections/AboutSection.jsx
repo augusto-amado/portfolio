@@ -11,18 +11,18 @@ const AboutSection = () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div className="md:col-span-2 space-y-6">
         <p className="text-gray-300 text-lg leading-relaxed">
-          Desenvolvedor Full Stack com experiência real construindo produtos do zero, do banco de dados à interface do usuário.
-          Já criei plataformas SaaS com inteligência artificial, sistemas de gestão comercial em produção e integrações
-          com APIs de pagamento, GitHub e WhatsApp.
+          Desenvolvedor full stack que constrói o produto inteiro, do banco de dados à interface.
+          Já trabalhei em plataformas SaaS com IA, sistemas de gestão comercial em produção e integrações
+          com pagamento, GitHub e WhatsApp.
         </p>
         <p className="text-gray-400 leading-relaxed">
-          Meu diferencial é transformar ideias em software funcionando rápido. Não entrego só código, entrego
-          produto: com autenticação, painel admin, deploy automatizado e pronto pra escalar. Trabalho com
-          Next.js, React, Node.js, TypeScript, Supabase e PostgreSQL no dia a dia.
+          Gosto de tirar a ideia do papel rápido e deixar de pé um produto que funciona: autenticação,
+          painel de admin e deploy automatizado. No dia a dia trabalho com Next.js, React, Node.js,
+          TypeScript, Supabase e PostgreSQL.
         </p>
         <p className="text-gray-400 leading-relaxed">
-          Atualmente sou cofundador da 10xDev, onde atuo na arquitetura e no desenvolvimento full-stack do produto.
-          Busco projetos freelance onde posso aplicar essa mesma mentalidade: entregar valor real, no prazo, com qualidade.
+          Hoje trabalho na 10xDev, na arquitetura e no desenvolvimento full-stack do produto.
+          Procuro projetos onde eu possa fazer o mesmo: entregar algo que funciona, no prazo.
         </p>
       </div>
 
@@ -34,23 +34,27 @@ const AboutSection = () => (
           <ul className="space-y-3 text-sm text-gray-400 font-mono">
             <li className="flex items-start gap-2">
               <span className="text-cyan-500 mt-0.5">&#9656;</span>
-              <span>2+ anos em TI, foco em desenvolvimento full-stack</span>
+              <span>Desenvolvedor full-stack, 2+ anos em TI (Next.js, Node, TypeScript, Supabase)</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-cyan-500 mt-0.5">&#9656;</span>
-              <span>2 produtos em produção com usuários reais</span>
+              <span>Atuação em produtos web em produção com usuários reais</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-cyan-500 mt-0.5">&#9656;</span>
-              <span>Experiência com IA (Claude, GPT, Gemini)</span>
+              <span>Desenvolvimento assistido por IA (Claude, GPT, Gemini) com revisão crítica do código gerado</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-cyan-500 mt-0.5">&#9656;</span>
-              <span>Deploy em Azure, Vercel e Docker</span>
+              <span>Deploy em Azure e Vercel, Docker e CI/CD com GitHub Actions</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-cyan-500 mt-0.5">&#9656;</span>
-              <span>Disponível para projetos remotos</span>
+              <span>Cursando Análise e Desenvolvimento de Sistemas (conclusão dez/2026)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-cyan-500 mt-0.5">&#9656;</span>
+              <span>Inglês avançado &middot; disponível para remoto</span>
             </li>
           </ul>
         </div>

@@ -17,6 +17,7 @@ import ProjectLayout, {
   FeatureSection,
   StatCard,
 } from '@/components/ProjectLayout';
+import Screenshot from '@/components/Screenshot';
 
 const TenxMktPage = () => {
   return (
@@ -87,9 +88,10 @@ const TenxMktPage = () => {
           Preview
           <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">/&gt;</span>
         </h2>
-        <MediaPlaceholder
+        <Screenshot
+          src="/10xmidia-overview.png"
+          alt="Visão geral da 10xMídia com filtros de período e canal, KPIs e gráficos de campanhas"
           label="Dashboard — visão geral de campanhas com KPIs e gráficos de evolução"
-          aspect="wide"
           span={2}
         />
       </section>
@@ -123,7 +125,11 @@ const TenxMktPage = () => {
         >
           <div className="ml-14 grid grid-cols-1 md:grid-cols-2 gap-4">
             <MediaPlaceholder label="Screenshot — Relatório gerado com análise por canal" />
-            <MediaPlaceholder label="Screenshot — Seleção de modelo e período" />
+            <Screenshot
+              src="/10xmidia-ai-analysis-modal.png"
+              alt="Modal da 10xMídia para escolher o modelo e iniciar a análise de campanhas com IA"
+              label="Análise com IA — seleção do modelo antes de processar as campanhas"
+            />
           </div>
         </FeatureSection>
 

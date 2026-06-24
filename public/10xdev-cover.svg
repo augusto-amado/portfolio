@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">10xDev</title>
+  <desc id="desc">Interface futurista representando código, GitHub e múltiplos modelos de inteligência artificial</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#030712"/><stop offset=".52" stop-color="#071426"/><stop offset="1" stop-color="#080515"/>
+    </linearGradient>
+    <radialGradient id="aura" cx="54%" cy="42%" r="58%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity=".18"/><stop offset=".55" stop-color="#8b5cf6" stop-opacity=".08"/><stop offset="1" stop-color="#02040a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="3"/></filter>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#22d3ee" stroke-opacity=".055"/></pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/><rect width="1200" height="675" fill="url(#aura)"/><rect width="1200" height="675" fill="url(#grid)"/>
+  <g opacity=".26" filter="url(#glow)" stroke="url(#line)" stroke-width="16" fill="none"><path d="M240 182L514 322M960 170L684 322M240 480L514 352M960 478L684 352"/></g>
+  <g stroke="#22d3ee" stroke-opacity=".52" stroke-width="2" fill="none"><path d="M240 182L514 322M960 170L684 322M240 480L514 352M960 478L684 352"/><path d="M350 106L543 298M850 106L657 298" stroke="#a78bfa" stroke-opacity=".42"/></g>
+
+  <g transform="translate(82 112)">
+    <rect width="282" height="172" rx="8" fill="#050b14" stroke="#22d3ee" stroke-opacity=".35"/>
+    <rect width="282" height="32" rx="8" fill="#0b1726"/><circle cx="18" cy="16" r="4" fill="#fb7185"/><circle cx="34" cy="16" r="4" fill="#fbbf24"/><circle cx="50" cy="16" r="4" fill="#34d399"/>
+    <g font-family="monospace" font-size="13"><text x="20" y="62" fill="#a78bfa">const</text><text x="67" y="62" fill="#e2e8f0">repo</text><text x="105" y="62" fill="#64748b">=</text><text x="121" y="62" fill="#67e8f9">await</text><text x="168" y="62" fill="#e2e8f0">scan()</text><text x="20" y="88" fill="#22d3ee">agent</text><text x="65" y="88" fill="#e2e8f0">.read(repo)</text><text x="20" y="114" fill="#22d3ee">agent</text><text x="65" y="114" fill="#e2e8f0">.analyze()</text><text x="20" y="140" fill="#34d399">return</text><text x="73" y="140" fill="#f8fafc">knowledge</text></g>
+  </g>
+
+  <g transform="translate(836 104)">
+    <rect width="282" height="172" rx="8" fill="#050b14" stroke="#a78bfa" stroke-opacity=".35"/>
+    <text x="24" y="38" fill="#94a3b8" font-family="monospace" font-size="12" letter-spacing="2">MULTI-LLM DEBATE</text>
+    <g font-family="monospace" font-size="11" text-anchor="middle">
+      <g transform="translate(47 76)"><circle r="19" fill="#0e2230" stroke="#22d3ee"/><text y="4" fill="#67e8f9">C</text></g>
+      <g transform="translate(104 76)"><circle r="19" fill="#17152c" stroke="#a78bfa"/><text y="4" fill="#c4b5fd">G</text></g>
+      <g transform="translate(161 76)"><circle r="19" fill="#0e2230" stroke="#22d3ee"/><text y="4" fill="#67e8f9">O</text></g>
+      <g transform="translate(218 76)"><circle r="19" fill="#17152c" stroke="#a78bfa"/><text y="4" fill="#c4b5fd">C</text></g>
+    </g>
+    <path d="M47 103L140 137M104 103L140 137M161 103L140 137M218 103L140 137" stroke="#64748b" stroke-width="1.5"/>
+    <rect x="101" y="132" width="78" height="25" rx="12" fill="#0e7490" fill-opacity=".28" stroke="#22d3ee"/><text x="140" y="149" text-anchor="middle" fill="#67e8f9" font-family="monospace" font-size="10">JUDGE</text>
+  </g>
+
+  <g transform="translate(76 399)">
+    <rect width="300" height="126" rx="8" fill="#050b14" stroke="#22d3ee" stroke-opacity=".28"/><text x="22" y="31" fill="#64748b" font-family="monospace" font-size="11" letter-spacing="2">GITHUB SYNC</text>
+    <circle cx="48" cy="73" r="21" fill="#0f172a" stroke="#94a3b8"/><path d="M40 74c0-8 16-8 16 0 0 5-3 8-8 8s-8-3-8-8zm4-10-4-7m12 7 4-7" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+    <path d="M82 73H190" stroke="#22d3ee" stroke-width="2" stroke-dasharray="7 6"/><path d="m184 67 8 6-8 6" fill="none" stroke="#22d3ee" stroke-width="2"/>
+    <rect x="205" y="50" width="70" height="47" rx="4" fill="#0c1d2b" stroke="#22d3ee"/><text x="240" y="78" text-anchor="middle" fill="#67e8f9" font-family="monospace" font-size="10">CARDS</text>
+  </g>
+
+  <g transform="translate(826 391)">
+    <rect width="300" height="134" rx="8" fill="#050b14" stroke="#a78bfa" stroke-opacity=".28"/><text x="22" y="31" fill="#64748b" font-family="monospace" font-size="11" letter-spacing="2">LIVE PIPELINE</text>
+    <g transform="translate(22 51)"><rect width="256" height="9" rx="4" fill="#172033"/><rect width="196" height="9" rx="4" fill="url(#line)"/><circle cx="196" cy="4.5" r="8" fill="#67e8f9" filter="url(#soft)"/></g>
+    <g font-family="monospace" font-size="10"><text x="22" y="91" fill="#34d399">● import running</text><text x="22" y="112" fill="#67e8f9">↳ read_file</text><text x="132" y="112" fill="#c4b5fd">↳ create_card</text></g>
+  </g>
+
+  <g transform="translate(480 257)">
+    <circle cx="120" cy="80" r="103" fill="#22d3ee" fill-opacity=".06" stroke="#22d3ee" stroke-opacity=".18"/>
+    <circle cx="120" cy="80" r="76" fill="#070d18" stroke="url(#line)" stroke-width="3"/>
+    <path d="M75 47 47 80l28 33M165 47l28 33-28 33M139 35l-38 90" fill="none" stroke="#67e8f9" stroke-width="9" stroke-linecap="square"/>
+    <circle cx="120" cy="80" r="91" fill="none" stroke="#a78bfa" stroke-opacity=".35" stroke-dasharray="4 12"/>
+  </g>
+
+  <text x="56" y="610" fill="#f1f5f9" font-family="monospace" font-size="58" font-weight="700" letter-spacing="6">10xDEV</text>
+  <text x="60" y="646" fill="#22d3ee" font-family="monospace" font-size="16" letter-spacing="4">REPOSITÓRIOS VIRAM CONHECIMENTO</text>
+  <text x="1140" y="638" text-anchor="end" fill="#a78bfa" font-family="monospace" font-size="12" letter-spacing="2">AGENTS · DEBATE · REAL-TIME</text>
+</svg>

@@ -31,8 +31,11 @@ const Screenshot = ({ src, label, alt, span = 1 }) => {
         <img
           src={src}
           alt={alt || label || 'Screenshot do projeto'}
+          width="1315"
+          height="654"
           className="w-full h-auto block"
           loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-[#020202]/0 group-hover:bg-[#020202]/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 pointer-events-none">
           <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-widest bg-[#0a0a0a]/80 border border-cyan-500/30 px-3 py-2 rounded-sm">

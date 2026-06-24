@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">10xDev</title>
+  <desc id="desc">Biblioteca de código da 10xDev com filtros, card aberto e fila de aprovação</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#030303"/>
+      <stop offset="0.55" stop-color="#07090e"/>
+      <stop offset="1" stop-color="#0b1020"/>
+    </linearGradient>
+    <radialGradient id="blueGlow" cx="72%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#2563eb" stop-opacity=".20"/>
+      <stop offset="1" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldGlow" cx="18%" cy="76%" r="45%">
+      <stop offset="0" stop-color="#eab308" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#eab308" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wordmark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#a1a1aa"/>
+    </linearGradient>
+    <filter id="panelShadow" x="-20%" y="-25%" width="150%" height="160%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#000000" flood-opacity=".75"/>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <clipPath id="libraryClip"><rect x="68" y="326" width="790" height="393" rx="18"/></clipPath>
+    <clipPath id="cardClip"><rect x="590" y="116" width="940" height="467" rx="20"/></clipPath>
+    <clipPath id="approvalClip"><rect x="875" y="570" width="655" height="326" rx="18"/></clipPath>
+    <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" opacity=".04"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#background)"/>
+  <rect width="1600" height="900" fill="url(#blueGlow)"/>
+  <rect width="1600" height="900" fill="url(#goldGlow)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+
+  <g transform="translate(68 68)">
+    <rect width="62" height="62" rx="16" fill="#f4f4f5"/>
+    <text x="31" y="40" text-anchor="middle" fill="#09090b" font-family="Arial, sans-serif" font-size="23" font-weight="800">10x</text>
+  </g>
+  <text x="151" y="112" fill="url(#wordmark)" font-family="Arial, sans-serif" font-size="52" font-weight="750" letter-spacing="-2">10xDev</text>
+  <text x="70" y="184" fill="#f4f4f5" font-family="Arial, sans-serif" font-size="40" font-weight="750">Seu código, entendido.</text>
+  <text x="72" y="220" fill="#71717a" font-family="Arial, sans-serif" font-size="17">Biblioteca, contexto e revisão de IA no mesmo fluxo.</text>
+
+  <g filter="url(#panelShadow)">
+    <rect x="62" y="320" width="802" height="405" rx="23" fill="#111318" stroke="#2d323b" stroke-width="2"/>
+    <image href="/10xdev-cards-filters.png" x="68" y="326" width="790" height="393" preserveAspectRatio="xMidYMid slice" clip-path="url(#libraryClip)"/>
+  </g>
+
+  <g filter="url(#panelShadow)">
+    <rect x="582" y="108" width="956" height="483" rx="26" fill="#111318" stroke="#3b4250" stroke-width="2"/>
+    <image href="/10xdev-card-syntax.png" x="590" y="116" width="940" height="467" preserveAspectRatio="xMidYMid slice" clip-path="url(#cardClip)"/>
+  </g>
+
+  <g filter="url(#panelShadow)">
+    <rect x="867" y="562" width="671" height="342" rx="24" fill="#111318" stroke="#5f5017" stroke-width="2"/>
+    <image href="/10xdev-admin-approval.png" x="875" y="570" width="655" height="326" preserveAspectRatio="xMidYMid slice" clip-path="url(#approvalClip)"/>
+  </g>
+
+  <circle cx="1490" cy="92" r="7" fill="#2563eb" opacity=".95"/>
+  <circle cx="1490" cy="92" r="22" fill="#2563eb" opacity=".18" filter="url(#softGlow)"/>
+  <text x="1468" y="98" text-anchor="end" fill="#a1a1aa" font-family="monospace" font-size="13" letter-spacing="2">GITHUB · CARDS · MULTI-LLM</text>
+</svg>

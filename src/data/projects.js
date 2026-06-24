@@ -5,7 +5,7 @@ export const projects = [
     category: "PRODUTO",
     status: "Em produção · ativo",
     tags: ["Next.js", "TypeScript", "Supabase", "Multi-LLM", "Agente IA", "GitHub Sync", "Stripe"],
-    image: "/10xdev-cover-minimal.png",
+    image: "/10xdev-banner.png",
     description: "Plataforma para desenvolvedores que conecta repositórios do GitHub, analisa o código com inteligência artificial e organiza tudo em uma biblioteca visual. Inclui sistema de pagamentos e painel de administração.",
     demoUrl: "https://10xdev.com.br",
     codeUrl: "https://github.com/LuizBertucci/10xdev"

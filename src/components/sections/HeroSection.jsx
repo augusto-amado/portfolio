@@ -55,8 +55,8 @@ const HeroSection = () => (
           </Button>
         </a>
         <Button variant="outline" className="h-12 px-6 gap-2 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.2)] hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all font-mono" data-testid="resume-btn" asChild>
-          <a href="/resume.pdf" download>
-            <Download className="h-4 w-4" /> RESUME.pdf
+          <a href="/resume.docx" download="Augusto Amado - Curriculo 2026.docx">
+            <Download className="h-4 w-4" /> CURRÍCULO
           </a>
         </Button>
         <div className="flex gap-4">

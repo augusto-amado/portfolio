@@ -29,7 +29,7 @@ export const projects = [
     category: "OPEN SOURCE",
     status: "Open source · público",
     tags: ["Next.js 16", "React 19", "Express 5", "TypeScript", "Supabase", "shadcn/ui"],
-    image: "/template-repository-overview.png",
+    image: "/template-banner.svg",
     description: "Starter full-stack open-source com Next.js 16, Express 5 e Supabase. Inclui uma vitrine de 39 componentes copiáveis, autenticação, testes e um fluxo de engenharia preparado para evoluir.",
     demoUrl: null,
     codeUrl: "https://github.com/10xdev-startup/template-nodejs-express-next-supabase"

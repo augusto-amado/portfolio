@@ -10,6 +10,7 @@ export const projects = [
     demoUrl: "https://10xdev.com.br",
     codeUrl: "https://github.com/LuizBertucci/10xdev"
   },
+  /* OCULTO TEMPORARIAMENTE enquanto a página está incompleta — não remover, é só descomentar pra voltar.
   {
     title: "10xMídia",
     slug: "10xmkt",
@@ -21,6 +22,7 @@ export const projects = [
     demoUrl: "https://10xmidia.com.br",
     codeUrl: null
   },
+  */
   {
     title: "Template Node.js",
     slug: "template-nodejs",

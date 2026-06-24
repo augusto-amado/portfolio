@@ -58,7 +58,7 @@ const TenxConsorciosPage = () => {
         </h2>
         <div className="border-l-2 border-cyan-500/30 pl-6 py-2 bg-gradient-to-r from-cyan-500/5 to-transparent">
           <p className="text-gray-300 leading-relaxed">
-            Este foi meu primeiro projeto como desenvolvedor. Entrei dando suporte e fui aprendendo na prática ao longo de ~200 commits, sendo que mais da metade foram correção de bugs e tarefas menores. Também participei de decisões de design da interface. A frente que assumi sozinho foi o webhook de captação de leads: foi onde aprendi, do zero, a implementar uma integração de verdade, lidando com payloads imprevisíveis, autenticação por token e o disparo automático pro WhatsApp.
+            Este foi meu primeiro projeto como desenvolvedor. Entrei dando suporte e fui aprendendo na prática ao longo de ~200 commits, sendo que mais da metade foram correção de bugs e tarefas menores. Também participei de decisões de design da interface. A frente que assumi sozinho foi o webhook de captação de leads: foi onde aprendi a implementar uma integração séria, lidando com payloads imprevisíveis, autenticação por token e o disparo automático pro WhatsApp.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">

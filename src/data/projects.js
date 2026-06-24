@@ -16,7 +16,7 @@ export const projects = [
     category: "CLIENTE",
     status: "Em produção · ativo",
     tags: ["Next.js", "TypeScript", "Supabase", "Multi-LLM", "Agente IA", "GitHub Sync", "Stripe"],
-    image: "/10xdev-debate-explorer.png",
+    image: "/10xdev-cover-v5.png",
     description: "Plataforma para desenvolvedores que conecta repositórios do GitHub, analisa o código com inteligência artificial e organiza tudo em uma biblioteca visual. Inclui sistema de pagamentos e painel de administração.",
     demoUrl: "https://10xdev.com.br",
     codeUrl: "https://github.com/LuizBertucci/10xdev"
@@ -42,5 +42,16 @@ export const projects = [
     description: "Template full-stack open-source com uma biblioteca de 40 componentes em 6 categorias. Starter pronto para produção (Next.js 16 + Express 5 + Supabase) que outros devs usam como ponto de partida com um clique em 'Use this template'.",
     demoUrl: null,
     codeUrl: "https://github.com/10xdev-startup/template-nodejs-express-next-supabase"
+  },
+  {
+    title: "Navinhazinha",
+    slug: "navinhazinha",
+    category: "AUTORAL",
+    status: "Projeto concluído",
+    tags: ["Unity 6.5", "C#", "Pixel Art", "IA assistida"],
+    image: "/navinhazinha-cover.svg",
+    description: "Shoot'em-up retrô criado em um fim de semana. Arte, áudio e efeitos são gerados por código, com um dev log que documenta onde a IA errou e como cada falha foi detectada.",
+    demoUrl: null,
+    codeUrl: "https://github.com/augusto-amado/navinhazinha"
   }
 ];

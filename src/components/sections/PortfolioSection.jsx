@@ -7,13 +7,13 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import GithubIcon from '@/components/GithubIcon';
 import { projects } from '@/data/projects';
 
-const filters = ['ALL', 'CLIENTE', 'OPEN SOURCE'];
+const filters = ['TODOS', 'PRODUTO', 'OPEN SOURCE', 'AUTORAL'];
 
 const PortfolioSection = () => {
   const navigate = useNavigate();
-  const [activeFilter, setActiveFilter] = useState('ALL');
+  const [activeFilter, setActiveFilter] = useState('TODOS');
 
-  const filteredProjects = activeFilter === 'ALL'
+  const filteredProjects = activeFilter === 'TODOS'
     ? projects
     : projects.filter(p => p.category === activeFilter);
 
@@ -83,9 +83,11 @@ const PortfolioSection = () => {
                   ) : (
                     <Button variant="outline" size="sm" className="gap-2 border-cyan-500 text-cyan-400 hover:bg-cyan-950 rounded-none" disabled><GithubIcon className="h-4 w-4" /> Code</Button>
                   )}
-                  <Button size="sm" className="gap-2 bg-cyan-600 hover:bg-cyan-500 text-black font-bold rounded-none" asChild>
-                    <a href={project.demoUrl || "#"} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}><ExternalLink className="h-4 w-4" /> Demo</a>
-                  </Button>
+                  {project.demoUrl && (
+                    <Button size="sm" className="gap-2 bg-cyan-600 hover:bg-cyan-500 text-black font-bold rounded-none" asChild>
+                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}><ExternalLink className="h-4 w-4" /> Demo</a>
+                    </Button>
+                  )}
                 </div>
               </div>
             </div>

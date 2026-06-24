@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { X, ZoomIn } from 'lucide-react';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Screenshot = ({ src, label, alt, span = 1 }) => {
+  const { copy } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -25,12 +27,12 @@ const Screenshot = ({ src, label, alt, span = 1 }) => {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        aria-label={label ? `Abrir print: ${label}` : 'Abrir print em tamanho maior'}
+        aria-label={label ? `${copy.screenshot.open}: ${label}` : copy.screenshot.openLarge}
         className="relative w-full overflow-hidden rounded-sm border border-cyan-500/20 group cursor-zoom-in transition-colors hover:border-cyan-500/50 block"
       >
         <img
           src={src}
-          alt={alt || label || 'Screenshot do projeto'}
+          alt={alt || label || copy.screenshot.fallback}
           width="1315"
           height="654"
           className="w-full h-auto block"
@@ -40,7 +42,7 @@ const Screenshot = ({ src, label, alt, span = 1 }) => {
         <div className="absolute inset-0 bg-[#020202]/0 group-hover:bg-[#020202]/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 pointer-events-none">
           <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-widest bg-[#0a0a0a]/80 border border-cyan-500/30 px-3 py-2 rounded-sm">
             <ZoomIn className="h-4 w-4" />
-            Ampliar
+            {copy.screenshot.zoom}
           </div>
         </div>
       </button>
@@ -61,7 +63,7 @@ const Screenshot = ({ src, label, alt, span = 1 }) => {
           <button
             type="button"
             onClick={() => setIsOpen(false)}
-            aria-label="Fechar"
+            aria-label={copy.screenshot.close}
             className="absolute top-4 right-4 h-10 w-10 rounded-full border border-cyan-500/30 bg-[#0a0a0a]/80 flex items-center justify-center text-cyan-400 hover:border-cyan-500 hover:text-cyan-300 transition-colors z-10"
           >
             <X className="h-5 w-5" />
@@ -69,7 +71,7 @@ const Screenshot = ({ src, label, alt, span = 1 }) => {
 
           <img
             src={src}
-            alt={alt || label || 'Screenshot do projeto ampliado'}
+            alt={alt || label || copy.screenshot.expandedFallback}
             onClick={(e) => e.stopPropagation()}
             className="max-h-[90vh] max-w-[95vw] object-contain cursor-default border border-cyan-500/20 rounded-sm"
           />

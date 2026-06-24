@@ -1,13 +1,17 @@
 import React from 'react';
 import TechIcon from '@/components/TechIcon';
 import { techStackGroups } from '@/data/tech-stack';
+import { useLanguage } from '@/hooks/useLanguage';
 
-const TechStackSection = () => (
+const TechStackSection = () => {
+  const { copy } = useLanguage();
+
+  return (
   <section id="tools" className="space-y-12 pb-32">
     <div className="space-y-4">
       <h2 className="text-3xl font-bold flex items-center gap-3 text-white font-mono">
         <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">&gt;</span>
-        Tech_Stack
+        {copy.techStack.title}
       </h2>
     </div>
 
@@ -31,6 +35,7 @@ const TechStackSection = () => (
       ))}
     </div>
   </section>
-);
+  );
+};
 
 export default TechStackSection;

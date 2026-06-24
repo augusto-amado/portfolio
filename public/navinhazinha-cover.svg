@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc" shape-rendering="crispEdges">
+  <title id="title">Navinhazinha</title>
+  <desc id="desc">Nave pixel art enfrentando inimigos em um campo espacial</desc>
+  <defs>
+    <linearGradient id="space" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050616"/>
+      <stop offset="0.55" stop-color="#09152d"/>
+      <stop offset="1" stop-color="#03050c"/>
+    </linearGradient>
+    <radialGradient id="nebula" cx="50%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#6d28d9" stop-opacity=".28"/>
+      <stop offset=".5" stop-color="#0891b2" stop-opacity=".11"/>
+      <stop offset="1" stop-color="#02030a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#space)"/>
+  <rect width="1200" height="675" fill="url(#nebula)"/>
+  <g fill="#67e8f9" opacity=".75">
+    <rect x="72" y="86" width="5" height="5"/><rect x="190" y="196" width="3" height="3"/><rect x="315" y="78" width="7" height="7"/>
+    <rect x="462" y="159" width="4" height="4"/><rect x="565" y="51" width="3" height="3"/><rect x="728" y="123" width="6" height="6"/>
+    <rect x="873" y="63" width="4" height="4"/><rect x="1034" y="154" width="7" height="7"/><rect x="1131" y="84" width="3" height="3"/>
+    <rect x="102" y="415" width="4" height="4"/><rect x="257" y="543" width="6" height="6"/><rect x="958" y="442" width="5" height="5"/>
+    <rect x="1094" y="571" width="6" height="6"/><rect x="786" y="555" width="3" height="3"/><rect x="420" y="490" width="4" height="4"/>
+  </g>
+  <g fill="#f8fafc" opacity=".9">
+    <rect x="134" y="290" width="3" height="3"/><rect x="377" y="245" width="4" height="4"/><rect x="653" y="205" width="3" height="3"/>
+    <rect x="917" y="285" width="4" height="4"/><rect x="1147" y="349" width="3" height="3"/><rect x="531" y="581" width="4" height="4"/>
+  </g>
+  <g opacity=".42" fill="#22d3ee" filter="url(#glow)">
+    <rect x="574" y="394" width="52" height="205"/><rect x="257" y="269" width="90" height="55"/><rect x="868" y="240" width="90" height="55"/>
+  </g>
+  <g transform="translate(252 234)">
+    <rect x="24" y="0" width="48" height="12" fill="#f43f5e"/><rect x="12" y="12" width="72" height="12" fill="#fb7185"/>
+    <rect x="0" y="24" width="96" height="24" fill="#be123c"/><rect x="12" y="48" width="24" height="12" fill="#7f1d1d"/><rect x="60" y="48" width="24" height="12" fill="#7f1d1d"/>
+    <rect x="36" y="24" width="24" height="12" fill="#fde68a"/>
+  </g>
+  <g transform="translate(866 210)">
+    <rect x="24" y="0" width="48" height="12" fill="#a855f7"/><rect x="12" y="12" width="72" height="12" fill="#c084fc"/>
+    <rect x="0" y="24" width="96" height="24" fill="#7e22ce"/><rect x="12" y="48" width="24" height="12" fill="#581c87"/><rect x="60" y="48" width="24" height="12" fill="#581c87"/>
+    <rect x="36" y="24" width="24" height="12" fill="#67e8f9"/>
+  </g>
+  <g fill="#67e8f9"><rect x="591" y="289" width="18" height="58"/><rect x="591" y="360" width="18" height="38"/></g>
+  <g transform="translate(532 427)">
+    <rect x="60" y="0" width="24" height="18" fill="#e0f2fe"/><rect x="48" y="18" width="48" height="18" fill="#67e8f9"/>
+    <rect x="36" y="36" width="72" height="24" fill="#0891b2"/><rect x="12" y="60" width="120" height="24" fill="#0e7490"/>
+    <rect x="0" y="84" width="48" height="18" fill="#155e75"/><rect x="84" y="84" width="48" height="18" fill="#155e75"/>
+    <rect x="48" y="60" width="36" height="72" fill="#22d3ee"/><rect x="57" y="42" width="18" height="24" fill="#f8fafc"/>
+    <rect x="48" y="132" width="36" height="18" fill="#f59e0b"/><rect x="54" y="150" width="24" height="24" fill="#f97316"/>
+  </g>
+  <text x="55" y="612" fill="#e6fbff" font-family="monospace" font-size="54" font-weight="700" letter-spacing="8">NAVINHAZINHA</text>
+  <text x="59" y="647" fill="#22d3ee" font-family="monospace" font-size="17" letter-spacing="5">UNITY + C# · ZERO ASSETS EXTERNOS</text>
+</svg>

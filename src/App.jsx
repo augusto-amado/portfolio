@@ -5,6 +5,7 @@ import TenxConsorciosPage from "./pages/projects/TenxConsorciosPage";
 import TenxDevPage from "./pages/projects/TenxDevPage";
 import TenxMktPage from "./pages/projects/TenxMktPage";
 import TemplateNodePage from "./pages/projects/TemplateNodePage";
+import NavinhazinhaPage from "./pages/projects/NavinhazinhaPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/project/10xdev" element={<TenxDevPage />} />
           <Route path="/project/10xmkt" element={<TenxMktPage />} />
           <Route path="/project/template-nodejs" element={<TemplateNodePage />} />
+          <Route path="/project/navinhazinha" element={<NavinhazinhaPage />} />
         </Routes>
       </BrowserRouter>
     </div>

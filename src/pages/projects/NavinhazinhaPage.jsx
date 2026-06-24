@@ -88,6 +88,9 @@ const NavinhazinhaPage = () => (
     period="2026"
     status="Projeto concluído"
     tags={['Unity 6.5', 'C#', '2D', 'Pixel Art', 'Áudio procedural', 'IA assistida']}
+    demoUrl="https://navinhazinha-webgl.vercel.app"
+    demoLabel="Jogar agora"
+    codeUrl="https://github.com/augusto-amado/navinhazinha"
   >
     <section className="space-y-6">
       <h2 className="text-2xl font-bold flex items-center gap-3 text-white font-mono">

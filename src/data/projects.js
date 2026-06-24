@@ -29,8 +29,8 @@ export const projects = [
     category: "OPEN SOURCE",
     status: "Open source · público",
     tags: ["Next.js 16", "React 19", "Express 5", "TypeScript", "Supabase", "shadcn/ui"],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop",
-    description: "Template full-stack open-source com uma biblioteca de 40 componentes em 6 categorias. Starter pronto para produção (Next.js 16 + Express 5 + Supabase) que outros devs usam como ponto de partida com um clique em 'Use this template'.",
+    image: "/template-repository-overview.png",
+    description: "Starter full-stack open-source com Next.js 16, Express 5 e Supabase. Inclui uma vitrine de 39 componentes copiáveis, autenticação, testes e um fluxo de engenharia preparado para evoluir.",
     demoUrl: null,
     codeUrl: "https://github.com/10xdev-startup/template-nodejs-express-next-supabase"
   },
@@ -42,7 +42,8 @@ export const projects = [
     tags: ["Unity 6.5", "C#", "Pixel Art", "IA assistida"],
     image: "/navinhazinha-cover.svg",
     description: "Shoot'em-up retrô criado em um fim de semana. Arte, áudio e efeitos são gerados por código, com um dev log que documenta onde a IA errou e como cada falha foi detectada.",
-    demoUrl: null,
+    demoUrl: "https://navinhazinha-webgl.vercel.app",
+    demoLabel: "Jogar",
     codeUrl: "https://github.com/augusto-amado/navinhazinha"
   }
 ];

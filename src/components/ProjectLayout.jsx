@@ -86,6 +86,7 @@ const ProjectLayout = ({
   status,
   tags,
   demoUrl,
+  demoLabel,
   codeUrl,
   children,
 }) => {
@@ -161,7 +162,7 @@ const ProjectLayout = ({
             {demoUrl && (
               <Button className="h-12 px-8 bg-cyan-600 hover:bg-cyan-500 text-black font-bold border-2 border-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] transition-all uppercase tracking-widest font-mono text-sm" asChild>
                 <a href={demoUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" /> Live Demo
+                  <ExternalLink className="h-4 w-4 mr-2" /> {demoLabel || 'Live Demo'}
                 </a>
               </Button>
             )}

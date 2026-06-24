@@ -85,7 +85,7 @@ const PortfolioSection = () => {
                   )}
                   {project.demoUrl && (
                     <Button size="sm" className="gap-2 bg-cyan-600 hover:bg-cyan-500 text-black font-bold rounded-none" asChild>
-                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}><ExternalLink className="h-4 w-4" /> Demo</a>
+                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}><ExternalLink className="h-4 w-4" /> {project.demoLabel || 'Demo'}</a>
                     </Button>
                   )}
                 </div>

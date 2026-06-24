@@ -16,7 +16,7 @@ export const projects = [
     category: "PRODUTO",
     status: "Em produção · ativo",
     tags: ["Next.js", "TypeScript", "Supabase", "Claude", "GPT", "Gemini"],
-    image: "/10xmidia-cover.png",
+    image: "/10xmidia-banner-v2.png",
     description: "Plataforma de marketing analytics que conecta Google Sheets com múltiplos modelos de IA para gerar relatórios automáticos, analisar campanhas e criar roteiros de vídeo.",
     demoUrl: "https://10xmidia.com.br",
     codeUrl: null

@@ -1,22 +1,11 @@
 export const projects = [
   {
-    title: "10xconsorcios",
-    slug: "10xconsorcios",
-    category: "CLIENTE",
-    status: "Pausado",
-    tags: ["Next.js", "TypeScript", "Supabase"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-    description: "Sistema de gestão comercial para empresa de consórcio. Controla o funil de vendas completo: captura automática de contatos, painel visual de negociações e gestão de equipe com permissões.",
-    demoUrl: "https://www.10xconsorcios.com.br",
-    codeUrl: "https://github.com/LuizBertucci/10x-consorcios"
-  },
-  {
     title: "10xDev",
     slug: "10xdev",
-    category: "CLIENTE",
+    category: "PRODUTO",
     status: "Em produção · ativo",
     tags: ["Next.js", "TypeScript", "Supabase", "Multi-LLM", "Agente IA", "GitHub Sync", "Stripe"],
-    image: "/10xdev-cover-v5.png",
+    image: "/10xdev-cover-minimal.png",
     description: "Plataforma para desenvolvedores que conecta repositórios do GitHub, analisa o código com inteligência artificial e organiza tudo em uma biblioteca visual. Inclui sistema de pagamentos e painel de administração.",
     demoUrl: "https://10xdev.com.br",
     codeUrl: "https://github.com/LuizBertucci/10xdev"
@@ -24,7 +13,7 @@ export const projects = [
   {
     title: "10xMídia",
     slug: "10xmkt",
-    category: "CLIENTE",
+    category: "PRODUTO",
     status: "Em produção · ativo",
     tags: ["Next.js", "TypeScript", "Supabase", "Claude", "GPT", "Gemini"],
     image: "/10xmidia-cover.png",

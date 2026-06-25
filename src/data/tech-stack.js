@@ -37,6 +37,7 @@ export const techStackGroups = [
       { name: "Docker", icon: "docker", color: "text-[#2496ED]", barColor: "#2496ED" },
       { name: "Azure", icon: "azure", color: "text-[#0078D4]", barColor: "#0078D4", useDevicon: "azure" },
       { name: "GitHub", icon: "github", color: "text-[#ffffff]", barColor: "#ffffff" },
+      { name: "n8n", icon: "n8n", color: "text-[#EA4B71]", barColor: "#EA4B71" },
     ]
   },
   {

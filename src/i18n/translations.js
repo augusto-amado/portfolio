@@ -14,14 +14,14 @@ export const translations = {
       title: 'Sobre_Mim',
       paragraphs: [
         'Sou desenvolvedor full stack com experiência em aplicações web de ponta a ponta: da modelagem do banco e APIs até interfaces, dashboards, integrações externas e deploy em produção.',
-        'Trabalho principalmente com React, Next.js, Node.js, TypeScript, Supabase e PostgreSQL. Já implementei autenticação, painéis administrativos, billing com Stripe, webhooks, sincronização com GitHub, tempo real com SSE e automações para fluxos reais de uso.',
+        'Trabalho principalmente com React, Next.js, Node.js, TypeScript, Supabase e PostgreSQL. Já implementei autenticação, painéis administrativos, billing com Stripe, webhooks, sincronização com GitHub, tempo real com SSE e automações com n8n para fluxos reais de uso.',
         'Gosto de entregar rápido sem abrir mão de critério técnico. Uso IA para acelerar investigação, análise e implementação, mas reviso o código, escrevo testes com Jest e tomo decisões de arquitetura com base no produto e no negócio.',
       ],
       quickFactsTitle: 'Resumo',
       quickFacts: [
         'Full stack com 3+ anos em TI e experiência prática em SaaS',
         'React, Next.js, Node.js, TypeScript, Supabase e PostgreSQL no dia a dia',
-        'Integrações reais: GitHub, Stripe, webhooks, OAuth, WhatsApp e Telegram',
+        'Integrações reais: GitHub, Stripe, webhooks, OAuth, WhatsApp, Telegram e automações com n8n',
         'IA no fluxo dev: MCPs, skills e CLIs próprios para automatizar tarefas e padronizar contexto técnico',
         'Qualidade de código: Jest, revisão técnica, CI/CD e deploy versionado',
         'Produto e UX: validação de fluxos reais, responsividade desktop/mobile e melhoria contínua da experiência',
@@ -66,14 +66,14 @@ export const translations = {
       title: 'About_Me',
       paragraphs: [
         'I am a full-stack developer with experience building web applications end to end: from database modeling and APIs to interfaces, dashboards, external integrations, and production deployments.',
-        'My main stack is React, Next.js, Node.js, TypeScript, Supabase, and PostgreSQL. I have shipped authentication, admin panels, Stripe billing, webhooks, GitHub sync, real-time flows with SSE, and automation for real user workflows.',
+        'My main stack is React, Next.js, Node.js, TypeScript, Supabase, and PostgreSQL. I have shipped authentication, admin panels, Stripe billing, webhooks, GitHub sync, real-time flows with SSE, and n8n automation for real user workflows.',
         'I like moving fast without giving up technical judgment. I use AI to speed up research, analysis, and implementation, but I review the code, write Jest tests, and make architecture decisions based on the product and business context.',
       ],
       quickFactsTitle: 'Quick Facts',
       quickFacts: [
         'Full stack developer with 3+ years in IT and hands-on SaaS experience',
         'Daily stack: React, Next.js, Node.js, TypeScript, Supabase, and PostgreSQL',
-        'Real integrations: GitHub, Stripe, webhooks, OAuth, WhatsApp, and Telegram',
+        'Real integrations: GitHub, Stripe, webhooks, OAuth, WhatsApp, Telegram, and n8n automations',
         'AI in the dev workflow: custom MCP integrations, skills, and CLIs to automate tasks and standardize technical context',
         'Code quality: Jest, technical review, CI/CD, and versioned deployments',
         'Product and UX: real flow validation, desktop/mobile responsiveness, and continuous experience improvement',

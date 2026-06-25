@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, MapPin, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import GithubIcon from '@/components/GithubIcon';
@@ -8,6 +8,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 
 const HeroSection = () => {
   const { copy, language } = useLanguage();
+  const [imageFailed, setImageFailed] = useState(false);
 
   return (
   <section className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 pt-16 md:pt-24 min-h-[70vh]">
@@ -95,20 +96,26 @@ const HeroSection = () => {
       </div>
     </div>
 
-    <div className="relative group flex items-center justify-center">
-      <div className="absolute -inset-8 rounded-full border border-cyan-500/20 border-dashed animate-spin-slow"></div>
-      <div className="absolute -inset-4 rounded-full border border-purple-500/20 border-dotted animate-spin-slow-reverse"></div>
-      <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 via-purple-500 to-cyan-500 opacity-30 blur-xl group-hover:opacity-60 transition-opacity duration-500"></div>
+    <div className="relative group flex h-80 w-80 shrink-0 items-center justify-center md:h-96 md:w-96 md:-translate-y-8">
+      <div className="absolute inset-0 rounded-full border border-cyan-500/20 border-dashed animate-spin-slow"></div>
+      <div className="absolute inset-4 rounded-full border border-purple-500/20 border-dotted animate-spin-slow-reverse"></div>
+      <div className="absolute inset-7 rounded-full bg-gradient-to-r from-cyan-500 via-purple-500 to-cyan-500 opacity-30 blur-xl group-hover:opacity-60 transition-opacity duration-500"></div>
 
       <div className="relative h-64 w-64 md:h-80 md:w-80 rounded-full p-1 bg-gradient-to-tr from-cyan-500 to-purple-600 shadow-[0_0_50px_rgba(34,211,238,0.3)] overflow-hidden z-10 flex items-center justify-center bg-[#020202]">
         <div className="h-full w-full rounded-full overflow-hidden bg-[#020202] relative flex items-center justify-center">
-          <span className="absolute text-6xl font-bold font-mono text-cyan-400/40 select-none">AA</span>
-          <img
-            src="/avatar.png"
-            alt="Augusto Amado"
-            className="relative w-full h-full object-cover"
-            onError={(e) => { e.currentTarget.style.display = 'none'; }}
-          />
+          {imageFailed ? (
+            <span className="absolute text-6xl font-bold font-mono text-cyan-400/40 select-none">AA</span>
+          ) : (
+            <img
+              src="/avatar.png"
+              alt="Augusto Amado"
+              className="relative h-full w-full object-cover"
+              decoding="async"
+              fetchPriority="high"
+              loading="eager"
+              onError={() => setImageFailed(true)}
+            />
+          )}
         </div>
       </div>
     </div>

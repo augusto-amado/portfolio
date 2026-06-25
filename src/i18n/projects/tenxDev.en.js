@@ -23,6 +23,7 @@ export const tenxDevEn = {
       ['Project task board', 'per-project kanban board with draggable columns and cards, task assignees, and status filters'],
       ['Live, shareable debates', 'model responses appear live; every debate is stored by job and receives a public read-only link'],
       ['Activation-focused home', 'guided onboarding on first access and welcome credits for running AI in the first session'],
+      ['UX and responsiveness validation', 'tested desktop and mobile flows, improving usability, screen states, and interaction clarity before production releases'],
       ['Orphan-file suggestions', 'detects changed files without cards during sync and suggests creating the missing cards with AI'],
       ['Notification-based access', 'project owners can approve or reject access requests directly from a notification'],
       ['Import that feels instant', 'the AI creates the first card in the initial response and opens Improvements automatically, showing value before the import ends'],

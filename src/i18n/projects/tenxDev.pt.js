@@ -23,6 +23,7 @@ export const tenxDevPt = {
       ['Quadro de tarefas', 'quadro kanban por projeto, com colunas e cartões que se arrastam, responsáveis por tarefa e filtro por estado'],
       ['Debate ao vivo e compartilhável', 'as respostas dos modelos aparecem ao vivo, cada debate fica salvo por job e ganha um link público read-only para compartilhar'],
       ['Home como missão de ativação', 'onboarding guiado no primeiro acesso e bônus de créditos de boas-vindas para rodar IA já na primeira sessão'],
+      ['Validação de UX e responsividade', 'testei fluxos em desktop e mobile, ajustando usabilidade, estados de tela e clareza das interações antes de levar para produção'],
       ['Sugestões de arquivos órfãos', 'durante a sincronização, detecta arquivos que entraram no diff e ainda não têm card e sugere criar os que faltam via IA'],
       ['Acesso por notificação', 'o pedido para entrar num projeto chega ao dono como notificação com botão de aprovar ou recusar; aprovar libera o acesso na hora e fecha o pedido, sem abrir a tela de membros'],
       ['Import que parece instantâneo', 'a IA já cria o primeiro card na resposta inicial e a aba de melhorias abre sozinha, então aparece resultado antes do import terminar'],

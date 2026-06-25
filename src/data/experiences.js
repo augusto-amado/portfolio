@@ -9,8 +9,8 @@ export const experiences = [
     duration: "1 ano",
     location: "Belo Horizonte, Minas Gerais, Brasil · Remota",
     locationEn: "Belo Horizonte, Minas Gerais, Brazil · Remote",
-    description: "Atuo na arquitetura e evolução de produtos full-stack com Next.js, Node.js, TypeScript e Supabase. Desenvolvo APIs, dashboards, integrações com GitHub e Stripe, automações, recursos de IA aplicados ao produto e infraestrutura de deploy com Docker, Azure e GitHub Actions. Também valido fluxos em desktop e mobile, ajustando usabilidade, responsividade e clareza da experiência.",
-    descriptionEn: "I work on the architecture and evolution of full-stack products with Next.js, Node.js, TypeScript, and Supabase. I build APIs, dashboards, GitHub and Stripe integrations, automation, AI-powered product features, and deployment infrastructure with Docker, Azure, and GitHub Actions. I also validate desktop and mobile flows, improving usability, responsiveness, and experience clarity."
+    description: "Atuo na arquitetura e evolução de produtos full-stack com Next.js, Node.js, TypeScript e Supabase. Desenvolvo APIs, dashboards, integrações com GitHub e Stripe, automações com n8n, recursos de IA aplicados ao produto e infraestrutura de deploy com Docker, Azure e GitHub Actions. Também valido fluxos em desktop e mobile, ajustando usabilidade, responsividade e clareza da experiência.",
+    descriptionEn: "I work on the architecture and evolution of full-stack products with Next.js, Node.js, TypeScript, and Supabase. I build APIs, dashboards, GitHub and Stripe integrations, n8n automation, AI-powered product features, and deployment infrastructure with Docker, Azure, and GitHub Actions. I also validate desktop and mobile flows, improving usability, responsiveness, and experience clarity."
   },
   {
     company: "CONTI CONSULTORIA, Belo Horizonte",

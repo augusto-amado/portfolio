@@ -4,7 +4,15 @@ import { techStackGroups } from '@/data/tech-stack';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const TechStackSection = () => {
-  const { copy } = useLanguage();
+  const { copy, language } = useLanguage();
+  const groupLabels = {
+    'pt-BR': {
+      Database: 'Banco de Dados',
+      'DevOps & Tools': 'DevOps & Ferramentas',
+      Testing: 'Testes',
+    },
+    'en-US': {},
+  };
 
   return (
   <section id="tools" className="space-y-12 pb-32">
@@ -19,7 +27,7 @@ const TechStackSection = () => {
       {techStackGroups.map((group, groupIndex) => (
         <div key={groupIndex} className="space-y-4">
           <h3 className="text-sm font-mono uppercase tracking-widest text-cyan-500/80 border-b border-cyan-500/20 pb-2">
-            {group.label}
+            {groupLabels[language][group.label] || group.label}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {group.techs.map((tech, index) => (

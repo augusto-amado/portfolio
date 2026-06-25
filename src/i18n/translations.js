@@ -8,7 +8,7 @@ export const translations = {
       availability: 'Disponível para novas oportunidades', rolePrefix: 'Desenvolvedor', roleHighlight: 'Full Stack',
       summary: 'Construo aplicações web completas com React, Next.js, Node.js e TypeScript, combinando integrações reais, banco de dados, deploy e recursos avançados de IA.',
       location: 'Belo Horizonte - Brasil', contact: 'Entre em contato', resume: 'CURRÍCULO',
-      resumeFileName: 'Augusto Amado - Currículo 2026.docx',
+      resumeFileName: 'Curriculo Augusto Amado 2026.docx',
     },
     about: {
       title: 'Sobre_Mim',
@@ -59,7 +59,7 @@ export const translations = {
       availability: 'Available for new opportunities', rolePrefix: 'Developer', roleHighlight: 'Full Stack',
       summary: 'I build complete web applications with React, Next.js, Node.js, and TypeScript, combining real integrations, databases, deployment, and advanced AI features.',
       location: 'Belo Horizonte - Brazil', contact: 'Contact Me', resume: 'RESUME',
-      resumeFileName: 'Augusto Amado - Resume 2026.docx',
+      resumeFileName: 'Resume Augusto Amado 2026.docx',
     },
     about: {
       title: 'About_Me',

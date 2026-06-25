@@ -66,14 +66,14 @@ const HeroSection = () => {
         </a>
         <div className="flex flex-wrap gap-3">
           <Button variant="outline" className="h-11 px-4 gap-2 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.2)] hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all font-mono text-xs uppercase tracking-wider" data-testid="resume-pt-btn" asChild>
-            <a href="/resume.pdf" download="Augusto Amado - Curriculo 2026.pdf" aria-label="Baixar currículo em português em PDF">
+            <a href="/curriculo-augusto-amado-2026.pdf" download="Curriculo Augusto Amado 2026.pdf" aria-label="Baixar currículo em português em PDF">
               <Download className="h-4 w-4" />
               <LanguageFlag country="br" />
               Currículo PDF
             </a>
           </Button>
           <Button variant="outline" className="h-11 px-4 gap-2 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.2)] hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all font-mono text-xs uppercase tracking-wider" data-testid="resume-en-btn" asChild>
-            <a href="/resume-en.pdf" download="Augusto Amado - Resume 2026.pdf" aria-label="Download English resume as PDF">
+            <a href="/resume-augusto-amado-2026.pdf" download="Resume Augusto Amado 2026.pdf" aria-label="Download English resume as PDF">
               <Download className="h-4 w-4" />
               <LanguageFlag country="us" />
               Resume PDF

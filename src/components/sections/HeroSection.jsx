@@ -3,8 +3,12 @@ import { Mail, MapPin, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import GithubIcon from '@/components/GithubIcon';
 import LinkedinIcon from '@/components/LinkedinIcon';
+import { useLanguage } from '@/hooks/useLanguage';
 
-const HeroSection = () => (
+const HeroSection = () => {
+  const { copy, language } = useLanguage();
+
+  return (
   <section className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 pt-16 md:pt-24 min-h-[70vh]">
     <div className="flex-1 space-y-8 relative">
       <div className="space-y-4">
@@ -13,7 +17,7 @@ const HeroSection = () => (
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
           </span>
-          Available for work
+          {copy.hero.availability}
         </div>
         <h2 className="text-cyan-400 font-mono text-lg tracking-wide drop-shadow-[0_0_5px_rgba(34,211,238,0.5)] typing-effect">
           &gt; console.log("Hello World");
@@ -23,7 +27,9 @@ const HeroSection = () => (
           <span className="text-cyan-400 animate-pulse ml-1 drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]">_</span>
         </h1>
         <h3 className="text-2xl md:text-3xl text-gray-400 font-light flex items-center gap-3">
-          <span className="text-cyan-500 font-mono">Full Stack</span> Developer
+          {language === 'pt-BR' && copy.hero.rolePrefix}
+          <span className="text-cyan-500 font-mono">{copy.hero.roleHighlight}</span>
+          {language === 'en-US' && copy.hero.rolePrefix}
         </h3>
       </div>
 
@@ -36,7 +42,7 @@ const HeroSection = () => (
         </div>
         <div className="flex items-center gap-3 group">
           <MapPin className="h-5 w-5 text-cyan-500 group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
-          <span>Belo Horizonte - Brazil</span>
+          <span>{copy.hero.location}</span>
         </div>
         <div className="flex items-center gap-3 group cursor-pointer hover:text-cyan-300 transition-colors">
           <svg className="h-5 w-5 text-cyan-500 group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -51,12 +57,12 @@ const HeroSection = () => (
       <div className="flex flex-wrap gap-4 pt-6 items-center">
         <a href="mailto:augustoamado.profissional@gmail.com">
           <Button className="h-12 px-8 bg-cyan-600 hover:bg-cyan-500 text-black font-bold border-2 border-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] transition-all uppercase tracking-widest font-mono text-sm" data-testid="contact-me-btn">
-            Contact Me
+            {copy.hero.contact}
           </Button>
         </a>
         <Button variant="outline" className="h-12 px-6 gap-2 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.2)] hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all font-mono" data-testid="resume-btn" asChild>
-          <a href="/resume.docx" download="Augusto Amado - Curriculo 2026.docx">
-            <Download className="h-4 w-4" /> CURRÍCULO
+          <a href="/resume.docx" download={copy.hero.resumeFileName}>
+            <Download className="h-4 w-4" /> {copy.hero.resume}
           </a>
         </Button>
         <div className="flex gap-4">
@@ -92,6 +98,7 @@ const HeroSection = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default HeroSection;

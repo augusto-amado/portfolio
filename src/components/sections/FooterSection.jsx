@@ -1,6 +1,10 @@
 import React from 'react';
+import { useLanguage } from '@/hooks/useLanguage';
 
-const FooterSection = () => (
+const FooterSection = () => {
+  const { copy } = useLanguage();
+
+  return (
   <footer className="border-t border-cyan-500/20 py-12 bg-[#010101] relative overflow-hidden">
     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-24 bg-cyan-500/5 blur-[50px] pointer-events-none"></div>
     <div className="container mx-auto px-4 text-center space-y-4 relative z-10">
@@ -10,10 +14,11 @@ const FooterSection = () => (
         <span className="text-cyan-600">/&gt;</span>
       </div>
       <p className="text-sm text-gray-600 font-mono">
-        Developed with <span className="text-cyan-500">React</span> & <span className="text-purple-500">Tailwind</span>
+        {copy.footer.developedWith} <span className="text-cyan-500">React</span> & <span className="text-purple-500">Tailwind</span>
       </p>
     </div>
   </footer>
-);
+  );
+};
 
 export default FooterSection;

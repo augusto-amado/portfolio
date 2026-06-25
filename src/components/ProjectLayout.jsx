@@ -4,6 +4,8 @@ import { ArrowLeft, ExternalLink } from 'lucide-react';
 import GithubIcon from "@/components/GithubIcon";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import LanguageFlag from "@/components/LanguageFlag";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const aspectMap = {
   video: "aspect-video",
@@ -90,6 +92,8 @@ const ProjectLayout = ({
   codeUrl,
   children,
 }) => {
+  const { copy, language, toggleLanguage } = useLanguage();
+
   return (
     <div className="min-h-screen bg-[#020202] text-gray-200 font-sans selection:bg-cyan-500/30 overflow-x-hidden">
       {/* Background */}
@@ -105,11 +109,22 @@ const ProjectLayout = ({
             <span>AUGUSTO</span>
             <span className="text-cyan-400">/&gt;</span>
           </Link>
-          <Link to="/">
-            <Button variant="outline" className="gap-2 border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 font-mono text-sm">
-              <ArrowLeft className="h-4 w-4" /> Back
-            </Button>
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link to="/">
+              <Button variant="outline" className="gap-2 border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 font-mono text-sm">
+                <ArrowLeft className="h-4 w-4" /> {copy.project.back}
+              </Button>
+            </Link>
+            <button
+              type="button"
+              onClick={toggleLanguage}
+              aria-label={copy.language.switchLabel}
+              title={copy.language.switchTitle}
+              className="h-9 min-w-12 px-2 bg-cyan-500/5 hover:bg-cyan-500/15 transition-all shadow-[0_0_10px_rgba(34,211,238,0.1)] hover:shadow-[0_0_15px_rgba(34,211,238,0.25)] flex items-center justify-center"
+            >
+              <LanguageFlag country={language === 'pt-BR' ? 'us' : 'br'} />
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -118,7 +133,7 @@ const ProjectLayout = ({
         <section className="space-y-8">
           <div className="space-y-4">
             <Link to="/" className="inline-flex items-center gap-2 text-cyan-500/60 hover:text-cyan-400 font-mono text-sm transition-colors">
-              <ArrowLeft className="h-3 w-3" /> Voltar ao portfólio
+              <ArrowLeft className="h-3 w-3" /> {copy.project.backToPortfolio}
             </Link>
 
             <h1 className="text-4xl md:text-6xl font-bold text-white font-mono tracking-tight">
@@ -136,7 +151,7 @@ const ProjectLayout = ({
               )}
               {period && <span>{period}</span>}
               {status && (() => {
-                const isPaused = /pausad|pausa/i.test(status);
+                const isPaused = /pausad|pausa|paused/i.test(status);
                 return (
                   <span className={`inline-flex items-center gap-2 border px-3 py-1 rounded-full text-xs uppercase tracking-wider ${isPaused ? "text-amber-400 border-amber-500/30 bg-amber-500/5" : "text-cyan-400 border-cyan-500/30 bg-cyan-500/5"}`}>
                     <span className="relative flex h-2 w-2">
@@ -162,14 +177,14 @@ const ProjectLayout = ({
             {demoUrl && (
               <Button className="h-12 px-8 bg-cyan-600 hover:bg-cyan-500 text-black font-bold border-2 border-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] transition-all uppercase tracking-widest font-mono text-sm" asChild>
                 <a href={demoUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" /> {demoLabel || 'Live Demo'}
+                  <ExternalLink className="h-4 w-4 mr-2" /> {demoLabel || copy.project.liveDemo}
                 </a>
               </Button>
             )}
             {codeUrl && (
               <Button variant="outline" className="h-12 px-6 gap-2 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.2)] transition-all font-mono" asChild>
                 <a href={codeUrl} target="_blank" rel="noopener noreferrer">
-                  <GithubIcon className="h-4 w-4" /> Source Code
+                  <GithubIcon className="h-4 w-4" /> {copy.project.sourceCode}
                 </a>
               </Button>
             )}
@@ -195,7 +210,7 @@ const ProjectLayout = ({
             <span className="text-cyan-600">/&gt;</span>
           </Link>
           <p className="text-sm text-gray-600 font-mono">
-            Developed with <span className="text-cyan-500">React</span> & <span className="text-purple-500">Tailwind</span>
+            {copy.footer.developedWith} <span className="text-cyan-500">React</span> & <span className="text-purple-500">Tailwind</span>
           </p>
         </div>
       </footer>

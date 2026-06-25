@@ -14,47 +14,13 @@ const DiagramBlock = ({ title, subtitle, children }) => (
   </div>
 );
 
-const TenxDevArchitecture = () => (
+const TenxDevArchitecture = ({ diagrams }) => (
   <div className="space-y-8">
-    <DiagramBlock
-      title="Fluxo 01 · Importação e GitSync"
-      subtitle="Do push no GitHub aos cards atualizados no projeto"
-    >{`GITHUB APP
-     │  OAuth / installation token
-     │
-     ├── push ──► WEBHOOK HMAC ──► EXPRESS API ──► IMPORT JOB
-     │                                                │
-     │                                                ▼
-     │                                          AGENT LOOP
-     │                              list · read · search · create_card
-     │                                                │
-     │                                                ▼
-     └──────────────────────────────────────► CARDS + SNAPSHOT
-                                                      │
-                                                      ▼
-                                                  SUPABASE
-
-NEXT.JS ◄── SSE + REPLAY ◄── AGENT ORCHESTRATOR ◄── eventos do job`}</DiagramBlock>
-
-    <DiagramBlock
-      title="Fluxo 02 · Análises e debate"
-      subtitle="O mesmo gateway atende melhorias, chat, arquitetura e review de commits"
-    >{`CARD / COMMITS
-      │  código vivo + briefing + patches
-      ▼
-SERVIÇOS DE IA ──► STRIPE LLM GATEWAY
-                         │
-              ┌──────────┼──────────┐
-              ▼          ▼          ▼
-           CLAUDE       GPT       GEMINI
-              └──────────┼──────────┘
-                         ▼
-                DEBATE + CONSENSO
-                         │
-                         ▼
-NEXT.JS ◄── SSE / NDJSON ◄── RESULTADOS + USO ──► SUPABASE
-
-        Auth/RBAC · rate limits · débito idempotente · Docker/Azure`}</DiagramBlock>
+    {diagrams.map(diagram => (
+      <DiagramBlock key={diagram.title} title={diagram.title} subtitle={diagram.subtitle}>
+        {diagram.content}
+      </DiagramBlock>
+    ))}
   </div>
 );
 

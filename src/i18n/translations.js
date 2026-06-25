@@ -1,28 +1,32 @@
 export const translations = {
   'pt-BR': {
+    metaTitle: 'Augusto Amado | Desenvolvedor Full Stack',
     metaDescription: 'Portfólio de Augusto Amado - Desenvolvedor Full Stack',
     navigation: { about: 'Sobre', portfolio: 'Portfólio', experience: 'Experiência', education: 'Formação', tools: 'Ferramentas' },
     language: { switchLabel: 'Mudar para inglês', switchTitle: 'English' },
     hero: {
-      availability: 'Disponível para trabalhar', rolePrefix: 'Desenvolvedor', roleHighlight: 'Full Stack',
+      availability: 'Disponível para novas oportunidades', rolePrefix: 'Desenvolvedor', roleHighlight: 'Full Stack',
+      summary: 'Construo aplicações web completas com React, Next.js, Node.js e TypeScript, combinando integrações reais, banco de dados, deploy e recursos avançados de IA.',
       location: 'Belo Horizonte - Brasil', contact: 'Entre em contato', resume: 'CURRÍCULO',
       resumeFileName: 'Augusto Amado - Currículo 2026.docx',
     },
     about: {
       title: 'Sobre_Mim',
       paragraphs: [
-        'Desenvolvedor full stack que constrói o produto inteiro, do banco de dados à interface. Já trabalhei em plataformas SaaS com IA, sistemas de gestão comercial em produção e integrações com pagamento, GitHub e WhatsApp.',
-        'Gosto de tirar a ideia do papel rápido e deixar de pé um produto que funciona: autenticação, painel de admin e deploy automatizado. No dia a dia trabalho com Next.js, React, Node.js, TypeScript, Supabase e PostgreSQL.',
-        'Hoje trabalho na 10xDev, na arquitetura e no desenvolvimento full-stack do produto. Procuro projetos onde eu possa fazer o mesmo: entregar algo que funciona, no prazo.',
+        'Sou desenvolvedor full stack com experiência em aplicações web de ponta a ponta: da modelagem do banco e APIs até interfaces, dashboards, integrações externas e deploy em produção.',
+        'Trabalho principalmente com React, Next.js, Node.js, TypeScript, Supabase e PostgreSQL. Já implementei autenticação, painéis administrativos, billing com Stripe, webhooks, sincronização com GitHub, tempo real com SSE e automações para fluxos reais de uso.',
+        'Meu diferencial é unir execução rápida com critério técnico. Uso IA como suporte para acelerar investigação, análise e implementação, incluindo agents, skills e MCPs próprios para automatizar fluxos de desenvolvimento. Mantenho revisão de código, testes com Jest, arquitetura e entendimento do negócio no centro das decisões.',
       ],
       quickFactsTitle: 'Resumo',
       quickFacts: [
-        'Desenvolvedor full-stack, 3+ anos em TI (Next.js, Node, TypeScript, Supabase)',
-        'Atuação em produtos web em produção com usuários reais',
-        'Desenvolvimento assistido por IA (Claude, GPT, Gemini) com revisão crítica do código gerado',
-        'Deploy em Azure e Vercel, Docker e CI/CD com GitHub Actions',
+        'Full stack com 3+ anos em TI e experiência prática em SaaS',
+        'React, Next.js, Node.js, TypeScript, Supabase e PostgreSQL no dia a dia',
+        'Integrações reais: GitHub, Stripe, webhooks, OAuth, WhatsApp e Telegram',
+        'IA avançada: multi-LLM, agents, skills e MCPs próprios para features e automação dev',
+        'Qualidade de código: Jest, revisão técnica, CI/CD e deploy versionado',
+        'Ambiente e deploy: Linux/WSL, Docker, Azure, Vercel e GitHub Actions',
         'Cursando Análise e Desenvolvimento de Sistemas (conclusão dez/2026)',
-        'Inglês avançado · disponível para remoto',
+        'Inglês avançado · disponível para remoto, híbrido ou presencial em BH',
       ],
     },
     portfolio: {
@@ -32,7 +36,7 @@ export const translations = {
     experience: { title: 'Experiência_Profissional' },
     education: {
       title: 'Formação', degree: 'Análise e Desenvolvimento de Sistemas',
-      status: 'STATUS: EM_ANDAMENTO', period: '2023 - 2026 (Previsão de conclusão)',
+      status: 'Em andamento', period: '2023 - 2026 (Previsão de conclusão)',
     },
     techStack: { title: 'Tecnologias' },
     project: {
@@ -47,29 +51,33 @@ export const translations = {
     footer: { developedWith: 'Desenvolvido com' },
   },
   'en-US': {
+    metaTitle: 'Augusto Amado | Full Stack Developer',
     metaDescription: "Augusto Amado's Portfolio | Full Stack Developer",
     navigation: { about: 'About', portfolio: 'Portfolio', experience: 'Experience', education: 'Education', tools: 'Tools' },
     language: { switchLabel: 'Switch to Portuguese', switchTitle: 'Português' },
     hero: {
-      availability: 'Available for work', rolePrefix: 'Developer', roleHighlight: 'Full Stack',
+      availability: 'Available for new opportunities', rolePrefix: 'Developer', roleHighlight: 'Full Stack',
+      summary: 'I build complete web applications with React, Next.js, Node.js, and TypeScript, combining real integrations, databases, deployment, and advanced AI features.',
       location: 'Belo Horizonte - Brazil', contact: 'Contact Me', resume: 'RESUME',
       resumeFileName: 'Augusto Amado - Resume 2026.docx',
     },
     about: {
       title: 'About_Me',
       paragraphs: [
-        'Full-stack developer who builds complete products, from the database to the user interface. I have worked on AI-powered SaaS platforms, business management systems running in production, and integrations with payment providers, GitHub, and WhatsApp.',
-        'I enjoy turning ideas into working products quickly, including authentication, admin dashboards, and automated deployments. My daily stack includes Next.js, React, Node.js, TypeScript, Supabase, and PostgreSQL.',
-        'I currently work at 10xDev on product architecture and full-stack development. I am looking for projects where I can do the same: deliver reliable, working software on schedule.',
+        'I am a full-stack developer with experience building web applications end to end: from database modeling and APIs to interfaces, dashboards, external integrations, and production deployments.',
+        'My main stack is React, Next.js, Node.js, TypeScript, Supabase, and PostgreSQL. I have shipped authentication, admin panels, Stripe billing, webhooks, GitHub sync, real-time flows with SSE, and automation for real user workflows.',
+        'My edge is combining fast execution with technical judgment. I use AI as support for research, analysis, and implementation, including custom agents, skills, and MCP integrations to automate development workflows. I keep code review, Jest tests, architecture, and business context at the center of decisions.',
       ],
       quickFactsTitle: 'Quick Facts',
       quickFacts: [
-        'Full-stack developer with 3+ years in IT (Next.js, Node, TypeScript, Supabase)',
-        'Experience building production web products used by real customers',
-        'AI-assisted development (Claude, GPT, Gemini) with critical review of generated code',
-        'Deployments on Azure and Vercel, Docker, and CI/CD with GitHub Actions',
+        'Full stack developer with 3+ years in IT and hands-on SaaS experience',
+        'Daily stack: React, Next.js, Node.js, TypeScript, Supabase, and PostgreSQL',
+        'Real integrations: GitHub, Stripe, webhooks, OAuth, WhatsApp, and Telegram',
+        'Advanced AI workflows: multi-LLM, custom agents, skills, and MCP integrations',
+        'Code quality: Jest, technical review, CI/CD, and versioned deployments',
+        'Environment and deployments: Linux/WSL, Docker, Azure, Vercel, and GitHub Actions',
         'Pursuing a degree in Systems Analysis and Development (expected Dec 2026)',
-        'Advanced English · available for remote work',
+        'Advanced English · available for remote, hybrid, or on-site work in Belo Horizonte',
       ],
     },
     portfolio: {
@@ -79,7 +87,7 @@ export const translations = {
     experience: { title: 'Work_Experience' },
     education: {
       title: 'Education', degree: 'Systems Analysis and Development',
-      status: 'STATUS: IN_PROGRESS', period: '2023 - 2026 (Expected graduation)',
+      status: 'In progress', period: '2023 - 2026 (Expected graduation)',
     },
     techStack: { title: 'Tech_Stack' },
     project: {

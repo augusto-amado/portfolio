@@ -17,8 +17,13 @@ const LanguageProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, language)
     document.documentElement.lang = language
+    document.title = copy.metaTitle
     document.querySelector('meta[name="description"]')?.setAttribute('content', copy.metaDescription)
-  }, [copy.metaDescription, language])
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', copy.metaTitle)
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', copy.metaDescription)
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', copy.metaTitle)
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', copy.metaDescription)
+  }, [copy.metaDescription, copy.metaTitle, language])
 
   const value = useMemo(() => ({
     language,

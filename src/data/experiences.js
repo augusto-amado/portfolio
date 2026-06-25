@@ -4,13 +4,13 @@ export const experiences = [
     companyUrl: "https://10xdev.com.br",
     role: "Cofundador & Desenvolvedor Full Stack",
     roleEn: "Co-founder & Full Stack Developer",
-    period: "jun de 2025 - o momento",
+    period: "jun de 2025 - atual",
     periodEn: "Jun 2025 - Present",
-    duration: "9 meses",
+    duration: "1 ano",
     location: "Belo Horizonte, Minas Gerais, Brasil · Remota",
     locationEn: "Belo Horizonte, Minas Gerais, Brazil · Remote",
-    description: "Lidero a arquitetura e evolução de plataformas full-stack (Next.js, Node.js, Supabase). Desenvolvo APIs REST, biblioteca de componentes reutilizáveis e integração GitSync com GitHub. Responsável por estruturação de projetos, dashboards e automações. Traduzo requisitos de negócio em solução técnica e mantenho documentação e versionamento de código.",
-    descriptionEn: "I lead the architecture and evolution of full-stack platforms built with Next.js, Node.js, and Supabase. I develop REST APIs, reusable component libraries, and GitSync integration with GitHub. I am responsible for project structure, dashboards, and automation, translating business requirements into technical solutions while maintaining documentation and source control."
+    description: "Atuo na arquitetura e evolução de produtos full-stack com Next.js, Node.js, TypeScript e Supabase. Desenvolvo APIs, dashboards, integrações com GitHub e Stripe, automações, recursos de IA aplicados ao produto e infraestrutura de deploy com Docker, Azure e GitHub Actions.",
+    descriptionEn: "I work on the architecture and evolution of full-stack products with Next.js, Node.js, TypeScript, and Supabase. I build APIs, dashboards, GitHub and Stripe integrations, automation, AI-powered product features, and deployment infrastructure with Docker, Azure, and GitHub Actions."
   },
   {
     company: "CONTI CONSULTORIA, Belo Horizonte",

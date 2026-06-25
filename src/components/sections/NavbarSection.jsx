@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import LanguageFlag from '@/components/LanguageFlag';
 
 const NavbarSection = () => {
   const { copy, language, toggleLanguage } = useLanguage();
+  const [isOpen, setIsOpen] = useState(false);
   const navigationItems = [
     { id: 'about', label: copy.navigation.about },
     { id: 'portfolio', label: copy.navigation.portfolio },
@@ -35,7 +37,20 @@ const NavbarSection = () => {
         ))}
       </div>
 
-        <div className="w-24 md:w-32 shrink-0 flex justify-end">
+        <div className="w-32 shrink-0 flex justify-end gap-2">
+          <button
+            type="button"
+            onClick={() => setIsOpen(current => !current)}
+            aria-label={
+              isOpen
+                ? language === 'en-US' ? 'Close navigation' : 'Fechar navegação'
+                : language === 'en-US' ? 'Open navigation' : 'Abrir navegação'
+            }
+            aria-expanded={isOpen}
+            className="md:hidden h-9 w-10 border border-cyan-500/30 bg-cyan-500/5 text-cyan-400 hover:bg-cyan-500/15 transition-all flex items-center justify-center"
+          >
+            {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          </button>
           <button
             type="button"
             onClick={toggleLanguage}
@@ -47,6 +62,23 @@ const NavbarSection = () => {
           </button>
         </div>
       </div>
+      {isOpen && (
+        <div className="md:hidden border-t border-cyan-500/20 bg-[#020202]/98">
+          <div className="container mx-auto px-4 py-3 grid gap-2">
+            {navigationItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={() => setIsOpen(false)}
+                className="flex items-center justify-between border border-cyan-500/15 bg-cyan-500/5 px-4 py-3 text-sm font-mono text-gray-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
+              >
+                <span>{item.label}</span>
+                <span className="text-cyan-500">#</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

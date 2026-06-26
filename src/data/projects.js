@@ -41,6 +41,7 @@ export const projects = [
     demoUrl: null,
     codeUrl: "https://github.com/10xdev-startup/template-nodejs-express-next-supabase"
   },
+  /* OCULTOS TEMPORARIAMENTE até screenshots e banco estarem prontos — não remover, só descomentar pra voltar.
   {
     title: "AI Gateway",
     slug: "ai-gateway",
@@ -69,6 +70,7 @@ export const projects = [
     demoUrl: null,
     codeUrl: "https://github.com/augusto-amado/rag-service"
   },
+  */
   {
     title: "Navinhazinha",
     slug: "navinhazinha",

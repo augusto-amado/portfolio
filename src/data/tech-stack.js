@@ -5,6 +5,7 @@ export const techStackGroups = [
       { name: "React", icon: "react", color: "text-[#61DAFB]", barColor: "#61DAFB" },
       { name: "Next.js", icon: "nextdotjs", color: "text-[#FFFFFF]", barColor: "#FFFFFF" },
       { name: "Tailwind", icon: "tailwindcss", color: "text-[#38B2AC]", barColor: "#38B2AC" },
+      { name: "Vite", icon: "vite", color: "text-[#646CFF]", barColor: "#646CFF" },
     ]
   },
   {
@@ -13,6 +14,7 @@ export const techStackGroups = [
       { name: "Node.js", icon: "nodedotjs", color: "text-[#339933]", barColor: "#339933" },
       { name: "Express", icon: "express", color: "text-[#FFFFFF]", barColor: "#FFFFFF" },
       { name: "TypeScript", icon: "typescript", color: "text-[#3178C6]", barColor: "#3178C6" },
+      { name: "Go", icon: "go", color: "text-[#00ADD8]", barColor: "#00ADD8" },
       { name: "Zod", icon: "zod", color: "text-[#3E67B1]", barColor: "#3E67B1" },
     ]
   },
@@ -27,6 +29,7 @@ export const techStackGroups = [
     label: "Python",
     techs: [
       { name: "Python", icon: "python", color: "text-[#FFD43B]", barColor: "#FFD43B" },
+      { name: "FastAPI", icon: "fastapi", color: "text-[#009688]", barColor: "#009688" },
       { name: "Django", icon: "django", color: "text-[#44B78B]", barColor: "#44B78B" },
     ]
   },

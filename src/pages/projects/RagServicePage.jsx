@@ -16,6 +16,15 @@ const tags = [
 
 const featureIcons = [Layers, ShieldCheck, FileStack, MessageSquare, LineChart]
 
+const PREVIEW_SHOT = '/shots/rag-service/01-preview.png'
+const FEATURE_SHOTS = [
+  '/shots/rag-service/02-hybrid.png',
+  '/shots/rag-service/03-permission.png',
+  '/shots/rag-service/04-ingest.png',
+  '/shots/rag-service/05-answer.png',
+  '/shots/rag-service/06-eval.png',
+]
+
 const RagServicePage = () => {
   const { language } = useLanguage()
   const content = ragServiceTranslations[language]
@@ -49,7 +58,7 @@ const RagServicePage = () => {
         <h2 className="text-2xl font-bold flex items-center gap-3 text-white font-mono">
           <span className={a.text}>&lt;</span>{content.preview.title}<span className={a.text}>/&gt;</span>
         </h2>
-        <MediaPlaceholder label={content.preview.label} aspect="wide" span={2} accent={ACCENT} />
+        <MediaPlaceholder label={content.preview.label} aspect="wide" span={2} accent={ACCENT} src={PREVIEW_SHOT} />
       </section>
 
       <Separator className={a.sep} />
@@ -69,7 +78,7 @@ const RagServicePage = () => {
               accent={ACCENT}
             >
               <div className="ml-0 md:ml-14">
-                <MediaPlaceholder label={feature.screenshot} aspect={feature.aspect || 'wide'} accent={ACCENT} />
+                <MediaPlaceholder label={feature.screenshot} aspect={feature.aspect || 'wide'} accent={ACCENT} src={FEATURE_SHOTS[index]} />
               </div>
             </FeatureSection>
           )

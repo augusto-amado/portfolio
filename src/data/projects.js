@@ -41,7 +41,6 @@ export const projects = [
     demoUrl: null,
     codeUrl: "https://github.com/10xdev-startup/template-nodejs-express-next-supabase"
   },
-  /* OCULTOS TEMPORARIAMENTE até screenshots e banco estarem prontos — não remover, só descomentar pra voltar.
   {
     title: "AI Gateway",
     slug: "ai-gateway",
@@ -50,7 +49,7 @@ export const projects = [
     statusEn: "Open source · public",
     tags: ["Go", "React", "Vite", "Multi-LLM", "SSE", "Ollama"],
     tagsEn: ["Go", "React", "Vite", "Multi-LLM", "SSE", "Ollama"],
-    image: "/ai-gateway-banner.svg",
+    image: "/ai-gateway-banner.png",
     description: "Gateway de LLM em Go que coloca vários modelos (Ollama, OpenAI, Anthropic) atrás de uma API única. Dispara todos em paralelo no endpoint de consenso, transmite via SSE e tem uma interface em React e Vite que compara os modelos lado a lado, ao vivo. Roda grátis com modelos locais.",
     descriptionEn: "LLM gateway in Go that puts several models (Ollama, OpenAI, Anthropic) behind a single API. It fires them all in parallel on the consensus endpoint, streams over SSE, and ships a React and Vite interface that compares the models side by side, live. Runs free with local models.",
     demoUrl: null,
@@ -64,13 +63,12 @@ export const projects = [
     statusEn: "Open source · public",
     tags: ["Python", "FastAPI", "pgvector", "RAG", "Busca híbrida", "Ollama"],
     tagsEn: ["Python", "FastAPI", "pgvector", "RAG", "Hybrid search", "Ollama"],
-    image: "/rag-service-banner.svg",
+    image: "/rag-service-banner.png",
     description: "RAG permission-aware em Python com FastAPI. Ingere documentos, faz busca híbrida sobre pgvector (vetorial + full-text fundidos por RRF) respeitando permissão por usuário, e gera a resposta via AI Gateway. Embeddings locais via Ollama, sem API key.",
     descriptionEn: "Permission-aware RAG in Python with FastAPI. Ingests documents, runs hybrid search over pgvector (vector + full-text fused by RRF) respecting per-user permission, and generates the answer via the AI Gateway. Local embeddings via Ollama, no API key.",
     demoUrl: null,
     codeUrl: "https://github.com/augusto-amado/rag-service"
   },
-  */
   {
     title: "Navinhazinha",
     slug: "navinhazinha",

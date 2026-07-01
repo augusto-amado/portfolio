@@ -16,6 +16,15 @@ const tags = [
 
 const featureIcons = [GitCompare, Network, Radio, LayoutTemplate, Rocket]
 
+const PREVIEW_SHOT = '/shots/ai-gateway/01-preview.png'
+const FEATURE_SHOTS = [
+  '/shots/ai-gateway/02-consensus.png',
+  '/shots/ai-gateway/03-providers.png',
+  '/shots/ai-gateway/04-streaming.png',
+  '/shots/ai-gateway/05-compare-ui.png',
+  '/shots/ai-gateway/06-ci.png',
+]
+
 const AiGatewayPage = () => {
   const { language } = useLanguage()
   const content = aiGatewayTranslations[language]
@@ -49,7 +58,7 @@ const AiGatewayPage = () => {
         <h2 className="text-2xl font-bold flex items-center gap-3 text-white font-mono">
           <span className={a.text}>&lt;</span>{content.preview.title}<span className={a.text}>/&gt;</span>
         </h2>
-        <MediaPlaceholder label={content.preview.label} aspect="wide" span={2} accent={ACCENT} />
+        <MediaPlaceholder label={content.preview.label} aspect="wide" span={2} accent={ACCENT} src={PREVIEW_SHOT} />
       </section>
 
       <Separator className={a.sep} />
@@ -69,7 +78,7 @@ const AiGatewayPage = () => {
               accent={ACCENT}
             >
               <div className="ml-0 md:ml-14">
-                <MediaPlaceholder label={feature.screenshot} aspect={feature.aspect || 'wide'} accent={ACCENT} />
+                <MediaPlaceholder label={feature.screenshot} aspect={feature.aspect || 'wide'} accent={ACCENT} src={FEATURE_SHOTS[index]} />
               </div>
             </FeatureSection>
           )

@@ -18,6 +18,7 @@ import Screenshot from '@/components/Screenshot'
 import { useLanguage } from '@/hooks/useLanguage'
 import { templateNodeTranslations } from '@/i18n/projects/templateNode'
 
+const ACCENT = 'blue'
 const categoryCounts = [11, 8, 6, 5, 5, 4]
 const featureIcons = [Boxes, Workflow, ShieldCheck, TestTube2, Container]
 const architectureIcons = [Monitor, Server, Database]
@@ -41,60 +42,62 @@ const TemplateNodePage = () => {
       status={content.hero.status}
       tags={tags}
       codeUrl="https://github.com/10xdev-startup/template-nodejs-express-next-supabase"
+      accent={ACCENT}
     >
       <section className="space-y-6">
         <h2 className="text-2xl font-bold flex items-center gap-3 text-white font-mono">
-          <span className="text-cyan-400">#</span>
+          <span className="text-blue-400">#</span>
           {content.overview.title}
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {content.overview.stats.map(([value, label]) => (
-            <StatCard key={label} value={value} label={label} />
+            <StatCard key={label} value={value} label={label} accent={ACCENT} />
           ))}
         </div>
       </section>
 
-      <Separator className="bg-cyan-500/20" />
+      <Separator className="bg-blue-500/20" />
 
       <section className="space-y-6">
         <h2 className="text-2xl font-bold flex items-center gap-3 text-white font-mono">
-          <span className="text-cyan-400">$</span>
+          <span className="text-blue-400">$</span>
           {content.work.title}
         </h2>
-        <div className="border-l-2 border-cyan-500/30 pl-6 py-2 bg-gradient-to-r from-cyan-500/5 to-transparent">
+        <div className="border-l-2 border-blue-500/30 pl-6 py-2 bg-gradient-to-r from-blue-500/5 to-transparent">
           <p className="text-gray-300 leading-relaxed">{content.work.description}</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {content.work.highlights.map(([feature, detail]) => (
-            <div key={feature} className="bg-[#0a0a0a] border border-cyan-500/10 p-4 rounded-sm hover:border-cyan-500/30 transition-colors">
-              <div className="text-cyan-400 font-mono font-bold text-sm">{feature}</div>
+            <div key={feature} className="bg-[#0a0a0a] border border-blue-500/10 p-4 rounded-sm hover:border-blue-500/30 transition-colors">
+              <div className="text-blue-400 font-mono font-bold text-sm">{feature}</div>
               <div className="text-[11px] text-gray-500 font-mono mt-1 leading-snug">{detail}</div>
             </div>
           ))}
         </div>
       </section>
 
-      <Separator className="bg-cyan-500/20" />
+      <Separator className="bg-blue-500/20" />
 
       <section className="space-y-6">
         <h2 className="text-2xl font-bold flex items-center gap-3 text-white font-mono">
-          <span className="text-cyan-400">&lt;</span>
+          <span className="text-blue-400">&lt;</span>
           {content.showcase.title}
-          <span className="text-cyan-400">/&gt;</span>
+          <span className="text-blue-400">/&gt;</span>
         </h2>
         <Screenshot
           src="/template-components-showcase.png"
           alt={content.showcase.alt}
           label={content.showcase.label}
           span={2}
+          accent={ACCENT}
         />
       </section>
 
-      <Separator className="bg-cyan-500/20" />
+      <Separator className="bg-blue-500/20" />
 
       <section className="space-y-12">
         <h2 className="text-2xl font-bold flex items-center gap-3 text-white font-mono">
-          <span className="text-cyan-400">&gt;</span>
+          <span className="text-blue-400">&gt;</span>
           {content.features.title}
         </h2>
 
@@ -106,13 +109,14 @@ const TemplateNodePage = () => {
               icon={<Icon className="h-5 w-5" />}
               title={title}
               description={description}
+              accent={ACCENT}
             >
               {index === 0 && (
                 <div className="ml-0 md:ml-14 grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {content.features.categories.map((name, categoryIndex) => (
                     <div key={name} className="flex items-center justify-between bg-[#0a0a0a] border border-white/10 p-3">
                       <span className="font-mono text-xs text-gray-400">{name}</span>
-                      <span className="font-mono text-sm font-bold text-cyan-400">{categoryCounts[categoryIndex]}</span>
+                      <span className="font-mono text-sm font-bold text-blue-400">{categoryCounts[categoryIndex]}</span>
                     </div>
                   ))}
                 </div>
@@ -122,11 +126,11 @@ const TemplateNodePage = () => {
         })}
       </section>
 
-      <Separator className="bg-cyan-500/20" />
+      <Separator className="bg-blue-500/20" />
 
       <section className="space-y-8">
         <h2 className="text-2xl font-bold flex items-center gap-3 text-white font-mono">
-          <Boxes className="h-6 w-6 text-cyan-400" />
+          <Boxes className="h-6 w-6 text-blue-400" />
           {content.architecture.title}
         </h2>
 
@@ -134,8 +138,8 @@ const TemplateNodePage = () => {
           {content.architecture.columns.map(([title, items], index) => {
             const Icon = architectureIcons[index]
             return (
-              <article key={title} className="bg-[#0a0a0a] border border-cyan-500/10 p-6 rounded-sm space-y-4">
-                <div className="flex items-center gap-3 text-cyan-400">
+              <article key={title} className="bg-[#0a0a0a] border border-blue-500/10 p-6 rounded-sm space-y-4">
+                <div className="flex items-center gap-3 text-blue-400">
                   <Icon className="h-5 w-5" />
                   <h3 className="text-sm font-mono uppercase tracking-widest">{title}</h3>
                 </div>
@@ -147,18 +151,18 @@ const TemplateNodePage = () => {
           })}
         </div>
 
-        <div className="border border-cyan-500/15 bg-[#070707] p-6 overflow-x-auto">
-          <pre className="text-xs sm:text-sm text-cyan-300/80 font-mono leading-7 min-w-[700px]">
+        <div className="border border-blue-500/15 bg-[#070707] p-6 overflow-x-auto">
+          <pre className="text-xs sm:text-sm text-blue-300/80 font-mono leading-7 min-w-[700px]">
             {content.architecture.diagram}
           </pre>
         </div>
       </section>
 
-      <Separator className="bg-cyan-500/20" />
+      <Separator className="bg-blue-500/20" />
 
       <section className="space-y-6">
         <h2 className="text-2xl font-bold flex items-center gap-3 text-white font-mono">
-          <Code2 className="h-6 w-6 text-cyan-400" />
+          <Code2 className="h-6 w-6 text-blue-400" />
           {content.openSource.title}
         </h2>
         <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] md:items-center">
@@ -177,12 +181,13 @@ const TemplateNodePage = () => {
             src="/10xdev-templates.png"
             alt={content.openSource.alt}
             label={content.openSource.label}
+            accent={ACCENT}
           />
         </div>
       </section>
 
-      <section className="border-l-2 border-cyan-400 bg-cyan-500/5 p-6 md:p-8 space-y-3">
-        <div className="flex items-center gap-3 text-cyan-400">
+      <section className="border-l-2 border-blue-400 bg-blue-500/5 p-6 md:p-8 space-y-3">
+        <div className="flex items-center gap-3 text-blue-400">
           <Sparkles className="h-5 w-5" />
           <h2 className="font-mono font-bold uppercase tracking-wider">{content.integration.title}</h2>
         </div>

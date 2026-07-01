@@ -21,10 +21,28 @@ const aspectMap = {
 /**
  * Placeholder para screenshots/vídeos que serão adicionados depois.
  */
-export const MediaPlaceholder = ({ label, aspect = "wide", span = 1, accent = "cyan" }) => {
+export const MediaPlaceholder = ({ label, aspect = "wide", span = 1, accent = "cyan", src }) => {
   const a = getAccent(accent);
   const aspectClass = aspectMap[aspect] || aspectMap.wide;
   const spanClass = span === 2 ? "md:col-span-2" : "";
+
+  if (src) {
+    return (
+      <figure className={`space-y-2 ${spanClass}`}>
+        <img
+          src={src}
+          alt={label || ""}
+          loading="lazy"
+          className={`w-full h-auto rounded-sm border ${a.b20} bg-[#0a0a0a]`}
+        />
+        {label && (
+          <figcaption className={`text-xs ${a.textDim} font-mono uppercase tracking-wider text-center px-2`}>
+            {label}
+          </figcaption>
+        )}
+      </figure>
+    );
+  }
 
   return (
     <figure className={`space-y-2 ${spanClass}`}>
